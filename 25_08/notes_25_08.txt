@@ -1,0 +1,64 @@
+	* HTML = Hyper Text Markup Language
+	* HTML 5 is used and it is mostly similar to HTML 4. 
+	* HTML is not a programming language, it is a "markup" language.
+	* HTML does not show us an error message (in most cases). ALthough it does show us page error when the HTML is running in a web browser.
+
+
+	WRITING A HTML DOCUMENT
+Required Tools:
+	* A plain text editor (e.g. vi, gedit, notepad).
+	* A web browser.
+
+Steps :
+	* Write the HTML code and save it with the ".htm" or ".html" extension.
+	* Optionally, validate the document (In a GNU system, validation can be done using the tidy program, e.g., tidy -e abc.html. Or, an online service can also be used such as W3C Markup Serivce) [This step is used to check any kind of errors in the HTML code. Executing this piece of line will tell us if there are any warnings or errors in the code. Kinda like a compiler only, cz HTML does not show any kind of errors when it is run in the web browser (in most of the cases)].
+	* Open the document using a web browser.
+Writing in Linux:
+	* After writing the HTML file, the code is supposed to be run in the Web browser (Can be usually opened by "xdg-open").
+	* Remember to write "<!DOCTYPE HTML>" at the top of the HTML file as it tells the web browser that it is an HTML file and it is supposed to be run as an HTML file rather than a normal file.
+	* At the second line, write "<html lang = "en">" instead of just "html" as it tells the browser that the contents written in the HTML file has english language in it.
+	* The file will then run in the web browser.
+	* You can also enter a line in the head tag which defines the characater set used in the web page. It helps the web browser to get info about the data written in the HTML file, rather than just running it blindly. The code is as follows - "<meta charset="utf-8">".
+
+
+	*NOTE - When you run the code in web browser and change it's size in the inspect element, and change it to a phone or a tablet, the default text size becomes too small. It can be fixed just by adding the line - 
+	"<meta name="viewport" content="width=device-width, initial-scale=1.0">"
+
+	* NOTE - HTML is NOT case sensitive.
+	* NOTE - HTML consists of various elements which are useful while developing, e.g., the 'HTML' element written by "<html>" and "</html>". Elements in HTML only consists of 3 things, i.e.,
+		1. A Starting tag (<html>)
+		2. A closing tag (</html>) [note that all the opening tags don't have a closing tag, so kindly refer to them accordingly]
+		3. Attributes (the extra conditions that we can add to the tags, e.g., the "lang" attribute with the HTML tag. Multiple attributes can be written in an Tag by separating them with just a blank space. Attributes are always written in the opening tag and never in the closing tage).
+		- There are also contents written between the tags.
+		
+VARIOUS TAGS USED IN AN HTML PAGE - 
+	* HTML - It defines that the file is a HTML code and the content written between the HTML tags is HTML code and to be run by the browser.
+
+	* Head - It defines the head area of the web page and shows the necessary data.
+	
+	* Title - The sentence written between the Title tags is shown as the name of the tab in the web page.
+	* Body - It defines the body area of the web page and helps us define the properties.
+
+TEXT LAYOUT in HTML -
+	* Headings - Headings in HTML are used to make the writings Bold and Large. Headings can be written in a webpage using the "<h></h>" tag. We can write the headings in a prioritised manner (like one after another) by using "<h1></h1>" tag. We can write till H6, in which H1 is the largest and H6 is the smallest.
+	* Break - This tag is used the break the text written and make a new line.It is mentioned using the "<br>". It does not have a closing tag, and thus it is called a "void tag".
+	* Blankspace - If we write a line with too many blankspaces, the web browser will always reduce the spaces to a single one. So we us e "&nbsp;" to mention to the web page that there is a space.
+	* Pre tag - In this, any text written between the "<pre></pre>" tags will be displayed in the same way as written.
+	* Paragraph - In this, we can create a paragraph by writing them in the "<p></p>" tags.
+	* HR tag - This tag creates a straight line just by mentioning the "<hr>" tag.
+	Examples are written in the 01 webpage.
+
+TEXT FORMATTING IN HTML -
+	* Italics - Can be written between "<i></i>" tags.
+	* Bold - Can be written between "<b></b>" tags.
+	* Strong - Can be written between "<strong></strong>" tags.
+	* Underline - Can be written between "<u></u>" tags.
+	* Strikethrough - Can be written between "<s></s>" tags.
+
+
+LABORATORY - 
+1. Create a web page which shows how to use comments in HTML.
+2. Create a web page to demonsrate the use of all the heading tags.
+3. Check how to use the following tags and create a web page to show their output - 
+	<strong>, <em>, <ins>, <s>, <del>, <pre>, <sub>, <sup>, <small>, <mark>, <q>, <blockquote>, <abbr>, <code>, <samp>, <kbd>, <var>.
+4. Check how to insert special characters (e.g., Copyright Symbol, Trademark Symbol, etc.) and emojis in a webpage.
