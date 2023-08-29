@@ -1,0 +1,43 @@
+******WE HAVE TO SUBMIT A LAB JOURNAL AT THE END OF THE COURSE******
+******Whatever problem or lab work to be done, is to be submitted to the professor as an electronic copy just like we submit an assignment, i.e., write the name, roll no., subject, semester, and other details and then write the question and code and paste a snapshot of the output as a PDF (All the members of the group have to submit a copy to professor)******
+
+29-08-2023
+
+
+	* HTML doesn't care about tab, spaces and indentation, just like in C. So, we don't have to worry about these things and develop without any worries (You can literally write the whole code in a single line, but it is not a good practice to do so).
+
+	LISTS IN HTML
+	* There are many types of lists in HTML. Some of the common ones that we have seen in a Word Processor are Bulletted Lists, Numbered lists. So, lists in HTML are also made in that way, and the types are - 
+		* Unordered Lists - The bulleted lists are called Unordered Lists in HTML.
+		* Ordered Lists - The numbered lists in HTML are called ordered lists as they are literally ordered in nature.
+		* Description Lists - Just like we write definitions in our copies, it helps us to write a term and then it's decription. And we can store multiple terms like that.
+
+	* Creating Lists in HTML - 
+		* At first we have to mention the type of list that is being used in the tag, i.e., <ul></ul> for unordered list, <ol></ol> for ordered list and <dl></dl> for a description lists.
+		* Then we have to write the items in the list accordingly in Unordered and Ordered between "List Items" tag, i.e., <li></li>
+		* In Description Lists, there are 2 types, Description Term (mentioned by <dt></dt>) which means the Term to be described and Description Definition (mentioned by <dd></dd>) which means writing the actual definition of the terms.
+
+	USING IMAGES IN HTML
+	* Using Images in HTML is quite easy and we can insert an image in an HTML page using the <img></img> tag. The img tag explicitly mentions the source of the image (the source can be anything from an actual link to the location of an image stored in your PC locally) using the "src" attribute in the img tag. HTML5 has also made it explicitly mention for us to mention another attribute in the img tag, i.e., the "alt" attribute. This alt attribute displays a string or something if the image is not loaded accordingly. 
+	* Be careful with the path of the src of the image as it can be a bit hassle using both absolute as well as relative indexing.
+	* It is not recommended to use the absolute path in image source because if we host the Webpage to an external server, the device will most probably not have the same directory as us, so relative addressing then helps because it only accesses the data we give.
+	* We can also mention the width and height of the image. Do remember that mentioning one of them will make the image small or large depending upon the Aspect Ratio and Resolution of the image. But mentioning both of them will make the image of that size only!
+	* There are two types of sizes in HTML,absolute and relative. Dimensions like 100px, mentiones an absolute size of the image. But Dimensions like 100% is relative to the display nature. 
+	* Example is shown in the HTML file.
+	
+	HYPERLINKS IN HTML
+	* Hyper links in HTML means adding link to another webapge inside your webpage.
+	* Hyperlinks in webpages can be written using the "anchors" or "a" (<a></a>) tag with the "href" attribute. 
+	* We can link any type of page to another webpage. We can add a link to another webpage, we can also link the location a webpage to another and then use it accordingly. (Do mention "https://" if you are mentioning some other webpage).
+	* Writing a link to any other webpage having the extensions other than ".com", ".in" or more and "/html" will automatically give us a prompt to download the file.
+	* As we can see, if we don't mention anything, the new webpage opens in the same tab as before. One way to tackle that is using the "Target" tag which will enable us to create an anchor which when clicked, will open in a new tab in the browser. 
+	* We can create many such hyperlinks like making a hyperlink to E-mail which when clicked will enable us to make a link, which when clicked will open the prompt to send an E-Mail to the address.
+	* We can also create a Bookmark Anchor, which will help us add the webpage as a bookmark in the broswer
+	* Examples are given.
+
+	TABLES IN HTML
+	* We can easily make tables in HTML using the <table></table> tags.
+	* We can create a row in the table using the "Table Row" tag, i.e., the <tr></tr> tags.
+	* Then we can create the columns or the data in a row in a table using the "Table Data" tag, i.e., <td></td> tags.
+	* We can also create a heading row by writing the "Table Heading" tags, i.e., <th></th> tags in place of <td></td>. It will make the Data in the Heading row bold to help us in noticing it.
+	* There are also various attributes in the table tag, like height and width which help us in styling the table. Although these are mostly used in CSS these days.
