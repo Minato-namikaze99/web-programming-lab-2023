@@ -41,3 +41,12 @@
 	* Then we can create the columns or the data in a row in a table using the "Table Data" tag, i.e., <td></td> tags.
 	* We can also create a heading row by writing the "Table Heading" tags, i.e., <th></th> tags in place of <td></td>. It will make the Data in the Heading row bold to help us in noticing it.
 	* There are also various attributes in the table tag, like height and width which help us in styling the table. Although these are mostly used in CSS these days.
+
+
+	LAB WORK Questions:
+	1. Create a WebPage to show how to use Ordered Lists and Description Lists.
+	2. Create a WebPage to demonstrate the use of Nested Lists.
+	3. Create a WebPage to show the use of image as a link.
+	4. Create a WebPage to create a link to an E-Mail address.
+	5. Create a WebPage to show the use of bookmark.
+	6. Create a table in WebPage to show the usage of <caption> tag, and colspan, rowspan properties.
