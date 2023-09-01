@@ -1,0 +1,55 @@
+1st of September, 2023
+
+INLINE FRAME 
+	* An inline frame (iframe) is a HTML element that loads another HTML page within the document. It essentially puts another webpage within the parent page. They are commonly used for advertisements, embedded videos, web analytics and interactive content.
+	* How does an iframe work?
+		* An iframe is an element of HTML code. It is supported by all major web browsers and is included in the latest HTML5 specifications.
+		* When the web browser encounters an iframe element, it creates a new HTML document environment to load the content within. It takes the code from the referenced src or srcdoc and renders it as its own website that is then put entirely within the parent browsing page. It is called an inline frame because to the user it is all one web page.
+
+		* The child iframe is a complete browsing environment within the parent frame. It can load its own JavaScript and CSS separate from the parent. They can also be refreshed and loaded asynchronously from the parent site.
+
+	* Definition and Usage
+		* The <iframe> tag specifies an inline frame.
+
+	(An inline frame is used to embed another document within the current HTML document.)
+
+	* Tip: Use CSS to style the <iframe> (see some examples in the internet). 
+
+	* Tip: It is a good practice to always include a title attribute for the <iframe>. This is used by screen readers to read out what is the content of the <iframe> is.
+
+IMAGE MAPS :
+	* The HTML <map> tag defines an image map. An image map is an image with clickable areas. The areas are defined with one or more <area> tags.
+
+	* How Does it Work?
+		* The idea behind an image map is that you should be able to perform different actions depending on where in the image you click.
+
+		* To create an image map you need an image, and some HTML code that describes the clickable areas.
+	* Using Image Maps:
+		* To use this, we have to use the attribute "usemap" within in <img> tag. This usemap, assigns a name to the image, which we can use later on.
+		* After naming it, we can call it by using the <map></map> tag. In the map tag, we have to mention the shape of the image that we want to assign the links or objects to. After naming the shape, we have to mention it's coordinates and mention the href, i.e., the link or object that should open when the part of the image is clicked. 
+
+HTML AUDIO:
+	* The HTML <audio> Element is used to play an audio file in HTML, use the <audio> element.
+	* HTML Audio - How It Works 
+		* The controls attribute adds audio controls, like play, pause, and volume.
+		* The <source> element allows you to specify alternative audio files which the browser may choose from. The browser will use the first recognized format.
+		* The text between the <audio> and </audio> tags will only be displayed in browsers that do not support the <audio> element.
+		* We also have to specify the type of the audio file that we will be using. We can find the type of the file using the command "file -i <filename>" from the command line in Linux.
+
+IMAGE REDIRECTION IN HTML 
+	* To redirect, we need to write just a single line in the head tag, i.e., "<meta http-equiv="refresh"content="3;https://google.com">". We can change the google.com link to any type of link we want and also change the number just before the link. It mentions how much time we have to wait to get redirected. In this, we have to wait 3s to get redirected to Google's page.
+
+
+SEMANTICS IN HTML:
+	* A semantic element clearly describes its meaning to both the browser and the developer. Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+
+	* Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
+	
+	* In HTML there are some semantic elements that can be used to define different parts of a web page:  <article>, <aside>, <details>, <figcaption>, <figure>, <footer>, <header>, <main>, <mark>, <nav>, <section>, <summary>, <time>, and many more.
+
+
+LAB WORK :
+	1. Create an HTML webpage to show how to load a HTML foc in an iFrame, when the user clicks on a link (i.e., iFrame as the target of a link).
+	2. Create an HTML webpage to show how to play a YouTube video in the page.
+	3. Create an HTML webpage to play a video file in the page.
+	4. Create an HTML webpage to show how to include a Favicon.
