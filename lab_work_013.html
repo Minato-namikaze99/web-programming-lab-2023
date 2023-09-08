@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Elements Demo</title>
+    <style>
+        fieldset {
+            width: 300px;
+            margin: 20px;
+        }
+        
+        legend {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Fieldset and Legend</legend>
+        <p>This is a fieldset with a legend.</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Input Types</legend>
+        <label for="dateInput">Date:</label>
+        <input type="date" id="dateInput"><br><br>
+
+        <label for="fileInput">File:</label>
+        <input type="file" id="fileInput"><br><br>
+
+        <label for="colorInput">Color:</label>
+        <input type="color" id="colorInput">
+    </fieldset>
+
+    <fieldset>
+        <legend>DataList and OptGroup</legend>
+        <label for="fruitInput">Select a fruit:</label>
+        <input type="text" list="fruits" id="fruitInput">
+        <datalist id="fruits">
+            <optgroup label="Citrus">
+                <option value="Lemon">
+                <option value="Orange">
+                <option value="Grapefruit">
+            </optgroup>
+            <optgroup label="Berries">
+                <option value="Strawberry">
+                <option value="Blueberry">
+                <option value="Raspberry">
+            </optgroup>
+        </datalist><br>
+                                        <label for="car">Choose a car:</label>
+                                        <select  name="cars" id="cars">
+                                         <optgroup label="Swedish Cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+  </optgroup>
+  <optgroup label="German Cars">
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </optgroup>
+</select>
+    </fieldset>
+</body>
+</html>
