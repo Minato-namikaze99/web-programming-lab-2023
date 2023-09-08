@@ -1,1 +1,79 @@
-Aaji kiba eta pohabo aaru
+88th of September, 2023 
+
+        -> What is HTML <form>?
+                - <form> is an HTML element to collect input data containing interactive controls. It provides facilities to input text, number, values, email, password, and control fields such as checkboxes, radio buttons, submit buttons, etc., or in other words, form is a container that contains input elements like text, email, number, radio buttons, checkboxes, submit buttons, etc. Forms are generally used when you want to collect data from the user. For example, a user wants to buy a bag online, so he/she has to first enter their shipping address in the address form and then add their payment details in the payment form to place an order.
+
+                - Forms are created by placing input fields within paragraphs, preformatted text, lists and tables. This gives considerable flexibility in designing the layout of forms. 
+                
+                - Syntax :
+                        <form>
+                                <!--form elements-->
+                        </form>
+                
+                - Attributes in form tag:
+                        a. METHOD ATTRIBUTE: The method attribute specifies how to send form-data (the form-data is sent to the page specified in the action attribute).
+
+                                The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+                                Notes on GET:
+                                        . Appends form-data into the URL in name/value pairs
+                                        . The length of a URL is limited (about 3000 characters)
+                                        . Never use GET to send sensitive data! (will be visible in the URL)
+                                        . Useful for form submissions where a user wants to bookmark the result
+                                        . GET is better for non-secure data, like query strings in Google
+                                Notes on POST:
+                                        . Appends form-data inside the body of the HTTP request (data is not shown in URL)
+                                        . Has no size limitations
+                                        . Form submissions with POST cannot be bookmarked
+                                => When we use the POST method, we will have to mention the encoding type, like the type of data to be encoded to be sent to some other space or server. 
+
+                        b. ACTION ATTRIBUTE: Mentions what is supposed to be done when the form is submitted. Mentions the "action" which is supposed to happen.
+
+
+                - Form elements (Elements that can be added in a Form in HTML)
+                        These are the following HTML <form> elements:
+
+                        1. <label>: It defines label for <form> elements.
+                        2. <input>: It is used to get input data from the form in various types such as text, password, email, etc by changing its type. It is the most versatile as it supports various attributes.
+                        3. <button>: It defines a clickable button to control other elements or execute a functionality. Buttons are also called as command button.
+                        4. <select>: It is used to create a drop-down list.
+                        5. <textarea>: It is used to get input long text content.
+                        6. <fieldset>: It is used to draw a box around other form elements and group the related data.
+                        7. <legend>: It defines a caption for fieldset elements.
+                        8. <datalist>: It is used to specify pre-defined list options for input controls.
+                        9. <output>: It displays the output of performed calculations.
+                        10. <option>: It is used to define options in a drop-down list.
+                        11. <optgroup>: It is used to define group-related options in a drop-down list.
+                => Textbox in HTML Form
+                        In an HTML form, we use the <input> tag by assigning type attribute value to text to input single line input. To define type attribute see the below syntax.
+
+                        NOTE: The default value of the type attribute is “text”.
+                        Syntax: <input type="text" />
+                => Password in an HTML Form
+                        We can change the type value text to password to get the input text as a password and keep it hidden.
+                        e.g.
+                                <!DOCTYPE html>
+                                <html>
+                                <head>
+                                        <title>Hehehehehe</title>
+                                </head>
+
+                                <body>
+                                <h2>Welcome To JEC LOL</h2>
+                                <form>
+
+                                <p>
+                                        <label>Username : <input type="text" /></label>
+                                </p>
+
+                                <p>
+                                        <label>Password : <input type="password" /></label>
+                                </p>
+
+                                <p>
+                                        <button type="submit">Submit</button>
+                                </p>
+                                </form>
+                                </body>
+                                </html>
+
