@@ -77,3 +77,54 @@
                                 </body>
                                 </html>
 
+			NOTE: To use a checkbox or a radio button, we have to mention the type in input tag as "checkbox" or "radio".
+
+			NOTE: Checkboxes allow us to select various buttons at the same time. But Radio buttons only allow us to select any one of the options. But remember that to use it in that way, we have to provide the same names to the options is Radio buttons. Checkboxes can have different and same names, they will work the same. But Radio Buttons with different names will behave like check boxes.
+		
+		=> Drop down in HTML Forms:
+			The <select> element is used to create a drop-down list.The name attribute is needed to reference the form data after the form is submitted (if you omit the name attribute, no data from the drop-down list will be submitted).The id attribute is needed to associate the drop-down list with a label. The <option> tags inside the <select> element define the available options in the drop-down list.
+			e.g. 
+				<label for="cars">Choose a car:</label>
+				<select name="cars" id="cars">
+  					<optgroup label="Swedish Cars">
+    						<option value="volvo">Volvo</option>
+    						<option value="saab">Saab</option>
+  					</optgroup>
+  					<optgroup label="German Cars">
+    						<option value="mercedes">Mercedes</option>
+    						<option value="audi">Audi</option>
+  					</optgroup>
+				</select>
+		=> Text Area:
+			The <textarea> tag defines a multi-line text input control. The <textarea> element is often used in a form, to collect user inputs like comments or reviews. A text area can hold an unlimited number of characters, and the text renders in a fixed-width font (usually Courier). The size of a text area is specified by the cols and rows attributes (or with CSS). The name attribute is needed to reference the form data after the form is submitted (if you omit the name attribute, no data from the text area will be submitted). The id attribute is needed to associate the text area with a label. 
+			e.g.,
+				<html>
+				<head>
+				<style>
+				textarea {
+  					resize: none;
+				}
+				</style>
+				</head>
+				<body>
+
+				<label for="w3review">Review of W3Schools:</label>
+
+				<textarea id="w3review" name="w3review" rows="4" cols="50">
+				At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+				</textarea>
+
+				</body>
+				</html>
+
+LAB WORK 
+1. Create a WebPage to demonstrate the following <form> elements:
+	a. <fieldset> and <legend>
+	b. input types: date, file and color
+	c. <datalist>
+	d. <optgroup>
+
+2. Create a WebPage to generate a form shown below. The form should have the following features:
+	a. the first two textboxes must not allow input of more than 10 characters.
+	b. The contents of the third textbox should not be modifiable. 
+	c. Clicking on the AC Button should clear the contents of the first two textboxes.
