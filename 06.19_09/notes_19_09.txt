@@ -1,0 +1,186 @@
+Date - 19th of September, 2023
+
+GENERIC ELEMENTS IN HTML
+	- In HTML, generic elements, often referred to as "HTML elements" or "block-level elements," are elements that do not have any specific semantic meaning or predefined functionality. They are used as structural building blocks for organizing and formatting content on a web page. Generic elements are essential for creating the overall structure and layout of a web page, and their behavior and appearance can be customized using CSS (Cascading Style Sheets).
+
+	Here are some examples of generic elements in HTML:
+		1. <div>: The <div> element is a generic container that is often used to group and style other elements. It is commonly used for layout purposes. It is a block level element, i.e., it will cover a part of area in the webpage.
+			e.g.: 
+			<div>
+  				<p>This is some text inside a div.</p>
+			</div>
+		2. <span>: The <span> element is another generic container, but it is typically used for inline content and text-level styling. It is an inline level element, i.e., it only covers the area or has jurisdiction over a line kinda thing in the webpage.
+			e.g.:
+			<span>: The <span> element is another generic container, but it is typically used for inline content and text-level styling.
+		3. <section>: The <section> element is used to define sections within a document, and it is often used to divide content into meaningful segments.
+			e.g.:	
+			<section>
+  				<h2>Section Heading</h2>
+  				<p>This is the content of the section.</p>
+			</section>
+		4. <article>: The <article> element is used to represent a self-contained piece of content that can be distributed and reused independently.
+			e.g.:
+			<article>
+  				<h2>Article Title</h2>
+  				<p>This is the content of the article.</p>
+			</article>
+		5. <header> and <footer>: These elements are used to define the header and footer sections of a document, respectively.
+			e.g.:
+			<header>
+  				<h1>Website Header</h1>
+			</header>
+
+			<footer>
+  				<p>&copy; 2023 MyWebsite</p>
+			</footer>
+		6. <nav>: The <nav> element is used to define navigation menus or links to other parts of a website.
+			e.g.:
+			<nav>
+  				<ul>
+    					<li><a href="#">Home</a></li>
+    					<li><a href="#">About</a></li>
+    					<li><a href="#">Contact</a></li>
+  				</ul>
+			</nav>
+	=> Generic elements don't have any kind of styles with them. But, we can assign some styles with each such tag.
+
+CSS SYNTAX
+	- Cascading Style Sheets (CSS) is a stylesheet language used for describing the presentation and formatting of web documents, including HTML documents. The CSS syntax defines how selectors and declarations are structured and used to style HTML elements. Here's a breakdown of the basic CSS syntax:
+		1. Selector: A selector is used to target one or more HTML elements that you want to style. It can be an HTML element type, a class, an ID, or other attribute-based selectors.
+			- Element Type Selectors :
+				p {
+  					/* CSS declarations go here */
+				}
+			This type only applies style to the an element in the webpage.
+			
+			- Class Selectors :
+				.my-class {
+  					/* CSS declarations go here */
+				}
+			This type applies the style to elements within a mentioned class. Note that the names of classes will always start from a (.) dot.
+
+			- ID Selectors :
+				#my-id {
+  					/* CSS declarations go here */
+				}
+			This type applies the styles to elements within an ID. Note that the name of IDs will always start from a (#) hash.
+
+			- Attribute Selector :
+				[data-custom] {
+  					/* CSS declarations go here */
+				}
+			This type applies the styles to elements withing an attribute.
+
+			- Grouping Selector :
+				selector1, selector2, selector3 {
+  					/* CSS declarations */
+				}
+				Grouping selectors, also known as multiple selectors or compound selectors, allow you to apply the same CSS styles to multiple HTML elements with different selectors in a single rule. This can help reduce redundancy in your CSS code and make it more concise and manageable. Grouping selectors involve listing multiple selectors in a single rule, separated by commas. The same set of CSS declarations are applied to all the elements matched by these selectors.Grouping selectors can be used with various types of selectors, including element type selectors, class selectors, ID selectors, and attribute selectors. 
+			
+			- Default Selector :
+				As the name suggests, we can edit some styles to the whole webpage as a default. It is mentioned using an (*) asterisk.
+				e.g.:
+				* {
+					/* CSS Declarations */
+				}
+
+
+		2. Declaration Block: Inside a selector, you define one or more property-value pairs in a declaration block enclosed within curly braces {}.
+		e.g.,
+		selector {
+  			property: value;
+  			/* More properties and values can be added here */
+		}
+
+		3. Property: The property is the aspect of the selected element that you want to style. It can be things like color, font-size, margin, padding, background, etc.
+		
+		4. Value: The value is the setting or value assigned to the property. It can be a numeric value, a color, a keyword, or a combination, depending on the property being used.
+
+	e.g., 
+		p {
+  			color: blue;
+  			font-size: 16px;
+  			margin-top: 10px;
+		}
+	In this example:
+		- p is the selector that targets all <p> elements.
+		- color, font-size, and margin-top are properties.
+		- blue, 16px, and 10px are the values assigned to those properties.
+
+PSEUDO-SELECTORS IN CSS
+	- Pseudo-selectors, also known as pseudo-classes, are special keywords in CSS that allow you to select and style elements based on their state or position within the document tree. Pseudo-selectors are preceded by a colon : and are used to apply styles to elements that cannot be targeted using regular element selectors alone. Here are some common pseudo-selectors in CSS:
+		1. :hover - This pseudo-class is used to select an element when the user hovers their mouse pointer over it. It's often used for interactive effects like changing the color of a link when it's hovered.
+			e.g.:
+			a:hover {
+  				color: red;
+			}
+
+		2. :active - This pseudo-class selects an element when it's actively being clicked or interacted with. It's commonly used to change the appearance of buttons or links when clicked.
+			e.g.:
+			button:active {
+  				background-color: #333;
+			}
+
+		3. :focus - This pseudo-class selects an element when it receives focus, typically through keyboard navigation or when clicked with a mouse. It's often used for form elements like input fields.
+			e.g.:
+			input:focus {
+ 				 border-color: blue;
+			}
+		
+		4.:checked - This pseudo-class selects form elements like radio buttons and checkboxes when they are checked.
+			e.g.:
+			input[type="checkbox"]:checked {
+  				border-color: green;
+			}
+		
+		5. :disabled - Selects form elements that are disabled.
+			e.g.:
+			input:disabled {
+  				opacity: 0.5;
+			}
+
+
+CSS BOX MODEL
+	- The CSS Box Model is a fundamental concept in web design and layout that describes how elements on a web page are rendered in rectangular boxes. These boxes consist of content, padding, border, and margin areas, and they determine how elements are sized and spaced within a web page. Understanding the box model is crucial for creating well-designed and consistent web layouts.
+
+	The CSS Box Model consists of four main components:
+		1. Content: This is the innermost part of the box and contains the actual content of the element, such as text, images, or other HTML elements. The content area's size is determined by the element's width and height properties.
+
+		2. Padding: The padding is the space between the content and the element's border. It provides spacing and breathing room for the content. You can set padding for each side of the element (top, right, bottom, left) individually.
+
+		3. Border: The border is a line that surrounds the content and padding areas. It defines the element's outer boundary. You can specify the border's style, color, and width using CSS properties.
+
+		4. Margin: The margin is the space outside the border, creating separation between the element and neighboring elements. Margins are used to control the spacing between elements on a page.
+
+		Here's a visual representation of the CSS Box Model:
+
+			+-----------------------------+
+			|          Margin             |
+			|                             |
+			|   +---------------------+   |
+			|   |       Border        |   |
+			|   |                     |   |
+			|   |   +-------------+   |   |
+			|   |   |   Padding   |   |   |
+			|   |   |  +-------+  |   |   |
+			|   |   |  |Content|  |   |   |
+			|   |   |  +-------+  |   |   |
+			|   |   +-------------+   |   |
+			|   |                     |   |
+			|   +---------------------+   |
+			|                             |
+			+-----------------------------+
+
+	The width and height of an element are calculated as follows:
+		Total width = width + padding-left + padding-right + border-left + border-right + margin-left + margin-right
+		Total height = height + padding-top + padding-bottom + border-top + border-bottom + margin-top + margin-bottom
+
+	By default, most HTML elements have some level of padding, border, and margin applied by the browser's default stylesheet. It's common for web developers to use CSS to adjust these properties to achieve the desired layout and spacing for their web pages.
+
+
+
+
+LAB WORK -
+1. Create a webpage to demonstrate different ways to specify colours in CSS (Predefined Colour Names-RGB, RGBA, Hex, HSL, HSLA).
+2. Create a webpage to demonstrate the some of the common font properties in CSS (e.g., font-family, font-style, font-weight, font-variant, font-size).
+3. Create a webpage to demonstrate how to use web fonts in CSS.
