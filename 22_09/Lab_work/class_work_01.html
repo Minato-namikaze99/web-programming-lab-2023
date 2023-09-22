@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylesheet</title>
+    <style>
+        .grid_conatiner {
+            display: grid;
+            grid-template-areas: 'head head head'
+                                 'menu menu menu'
+                                'footer footer footer';
+        }
+
+        .header {
+            grid-area: head;
+            text-align: center;
+            background-color: teal;
+        }
+
+        .menu {
+            grid-area: menu;
+            background-color: yellow;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: cyan;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: brown;
+        }
+
+        h1,
+        body {
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid_container">
+        <div class="header">
+            <h1>Header</h1>
+        </div>
+        <div class="menu">
+            <b>Menu</b>
+            <br>HTML<br>
+            CSS<br>
+            JavaScript<br>
+        </div>
+        <div class="main">Main content goes here</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+
+</html>
