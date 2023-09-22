@@ -1,0 +1,138 @@
+22nd of September, 2023
+
+COMMENTS IN CSS
+    - In CSS (Cascading Style Sheets), comments are used to add explanatory notes or descriptions within your stylesheet. CSS comments are not visible on the web page and are only intended for developers to understand the code better. There are two ways to write comments in CSS:
+
+        1. Single-line comments: You can use double slashes "//" to write a single-line comment. Everything after the // on the same line is considered a comment and is ignored by the browser.
+            e.g.:
+            /* This is a regular CSS rule */
+                body {
+                background-color: #ffffff;
+                color: #333333;
+                }
+
+            // This is a single-line comment
+            /* This is also a single-line comment */
+            
+            In the example above, the comments starting with // and /* ... */ are not applied to the webpage, and they are there only for developers to read.
+
+        2. Multi-line comments: You can also use /* ... */ to write multi-line comments in CSS. Anything between "/*" and "*/" is treated as a comment and is ignored by the browser. You can use multi-line comments for longer explanations or to comment out blocks of code.
+            e.g.:
+                /* This is a regular CSS rule */
+                body {
+                    background-color: #ffffff;
+                    color: #333333;
+                }
+
+                /*
+                This is a multi-line comment.
+                It can span across multiple lines.
+                */
+
+                /* You can also use multi-line comments
+                   to temporarily comment out code:
+                */
+                /*
+                p {
+                    font-size: 16px;
+                }
+                */
+                In the last example, the entire p selector and its properties are commented out, meaning they won't be applied to the webpage until you remove the comment marks.
+
+THE <div> TAG
+    - The <div> element is short for "division" and is used in HTML to create a generic container or block-level element that can be styled using CSS. It is one of the most commonly used HTML elements for structuring web page content and applying CSS styles to that content.
+    - It basically creates a table, in which we can insert the data.
+    e.g.:
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style>
+                /* CSS styles applied to the div element */
+                .my-div {
+                    background-color: lightblue;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="my-div">
+                <h1>This is a heading inside a div</h1>
+                <p>This is some text inside the div.</p>
+            </div>
+        </body>
+        </html>
+
+    In the example above: 
+        - We create a <div> element with the class attribute set to "my-div." The class attribute is used to apply CSS styles to specific elements.
+        - In the <style> section, we define CSS styles for elements with the class "my-div." This includes setting a background color, padding, and a border.
+        - Inside the <div>, we have a heading and a paragraph, both of which are contained within the <div> and inherit the CSS styles defined for it.
+
+ADVANTAGES OF <div> OVER <table>
+    - Semantic HTML: The primary advantage is that <div> elements are more semantically correct for structuring web content. <table> elements are meant for tabular data, such as spreadsheets, not for general layout. When you use <div> elements, your HTML code reflects the actual structure and purpose of the content, making it more accessible and understandable to both humans and search engines.
+    - Separation of Concerns: Using <div> and CSS separates the structure (HTML) from the presentation (CSS) and the behavior (JavaScript). This separation is known as the "separation of concerns" principle, and it leads to more maintainable and flexible code. With tables, HTML, presentation, and structure are often intertwined, making it harder to maintain and update your code.
+    - Faster Page Loading: Using CSS for layout typically results in smaller file sizes and faster page loading times compared to using tables. Tables tend to generate larger HTML files due to the additional markup required for tabular data. Smaller file sizes lead to faster download times, which is crucial for a positive user experience.
+    - Responsive Design: Creating responsive and mobile-friendly designs is more straightforward with <div> and CSS. Modern web design often involves adapting layouts for various screen sizes and devices. CSS provides the flexibility to create responsive designs that automatically adjust to different screen widths, while tables can be challenging to make responsive.
+    - Easier Styling: CSS provides fine-grained control over styling. With tables, styling can be limited and less precise. CSS allows you to style individual elements within a <div>, change layouts, and apply effects without altering the HTML structure.
+    - Maintenance and Scalability: Code built with <div> elements and CSS tends to be more maintainable and scalable. When you need to make changes or add new content, you can do so more easily without affecting the entire layout. In contrast, tables can become unwieldy as content grows or changes.
+    - Future Compatibility: Modern web development practices prioritize the use of semantic HTML and CSS. Web standards and best practices evolve over time, and aligning with these practices ensures that your code will remain compatible with current and future web technologies.
+
+
+GRID LAYOUT IN CSS
+    - Grid layout is like the <div> tag only, but it allows us more ways to customise and develop designs.
+    - CSS Grid Layout is a powerful two-dimensional layout system that allows you to create complex layouts on web pages. It provides a grid-based structure for arranging and positioning elements on a webpage, making it easier to create responsive and flexible layouts. Here's an overview of how CSS Grid works:
+        1. Grid Container: To create a grid layout, you first define a grid container by applying the display: grid; property to an element. This element becomes the parent container for the grid items.
+            e.g.:
+            .grid-container {
+                display: grid;
+            }
+
+        2. Grid Items: The child elements of the grid container are called grid items. You can place any HTML element inside a grid container, and they will automatically become grid items.
+            e.g.:
+            <div class="grid-container">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+
+        3. Defining Grid Rows and Columns: You can define the structure of the grid using the grid-template-rows and grid-template-columns properties. These properties allow you to specify the size and number of rows and columns in the grid.
+            e.g.:
+            .grid-container {
+                display: grid;
+                grid-template-rows: 100px 200px;
+                grid-template-columns: 1fr 2fr 1fr;
+            }
+            In this example, we have defined two rows with heights of 100px and 200px and three columns with a flexible layout.
+
+        4. Placing Grid Items: You can use properties like grid-row and grid-column to position grid items within the grid. You can specify the starting and ending positions for rows and columns.
+            e.g.:
+            .grid-item {
+                grid-row: 1 / 3; /* Starts at row 1 and ends at row 3 */
+                grid-column: 2 / 4; /* Starts at column 2 and ends at column 4 */
+            }
+
+        5. Auto Placement: If you don't explicitly place grid items, they will be automatically placed in the order they appear in the HTML markup.
+
+        6. Grid Gaps: You can add gaps (margins) between grid items and rows/columns using the grid-gap property.
+            e.g.:
+            .grid-container {
+                grid-gap: 10px;
+            }
+
+        7. Responsive Layouts: CSS Grid makes it easy to create responsive layouts. You can change the grid structure or item placement based on screen size using media queries.
+            e.g.:
+            @media (max-width: 768px) {
+                .grid-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+
+    - NOTE - We can also make grids using grid-area-templates. Look at the example HTML file for proper clarity.
+
+
+LAB WORK:
+1. Create a webpage to demonstrate how to create rounded corners, box shadow and text shadow in CSS.
+2. Create a webpage to demonstrate some of the 2-D Transforms in CSS (e.g., translate(), rotate(), scale(), skew()).
+3. Create a webpage to demonstrate transitions in CSS.
+4. Create a webpage to demonstrate how to animate objects using @keyframes in CSS.
