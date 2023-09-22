@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 2D Transforms</title>
+    <style>
+
+       
+        .transform-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 400px;
+            margin: 200px auto;
+        }
+
+        .transform-box {
+            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: #34db53;
+            color: #ffffff;
+            text-align: center;
+            line-height: 100px;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .transform-box:hover {
+            transform: translate(50px, -50px) rotate(90deg) scale(2) skew(30deg, 10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="transform-container">
+        <div class="transform-box">Transform Rotate Scale Skew</div>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
