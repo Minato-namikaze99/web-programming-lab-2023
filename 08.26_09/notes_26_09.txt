@@ -1,0 +1,85 @@
+26th of September, 2023
+
+MEDIA QUERIES IN CSS
+    - In web development, a media query is a CSS technique that allows you to apply different styles and layouts to a web page based on the characteristics of the device or viewport that is rendering the page. Media queries are primarily used for creating responsive web designs, ensuring that web content adapts and looks good on various screen sizes and devices, including desktop computers, laptops, tablets, and smartphones.
+    - Basically, it helps us apply properties and all to media files like photos, videos and sorts.
+    - As we know, an Image might be large in size, i.e., 1-10 MB to maybe even GBs. So, it will make our website slow when an image of that sort is to be rendered. So, we can either resize it or add some other properties to it using the media queries in CSS to avoid such trouble and add some custom style and sorts.
+    - IMAGE:
+        - There are 2 types of Images
+            1. Raster Image: A raster image, also known as a bitmap image, is a type of digital image that is made up of a grid or matrix of individual pixels. Each pixel in a raster image contains information about color and brightness, and the collection of pixels forms the overall visual representation of the image. Raster images are characterized by their use of a fixed number of pixels arranged in rows and columns.
+                            Key characteristics of raster images include:
+                            => Pixel-Based: Raster images are composed of a finite number of pixels. Each pixel has a specific location and color value. The resolution of a raster image is determined by the number of pixels it contains. Higher resolution images have more pixels and can display finer detail.
+                            => Resolution Dependent: Raster images have a fixed resolution, which means that they may lose quality when resized to a larger dimension. Enlarging a raster image can make it appear pixelated or blocky, as the individual pixels become more visible.
+                            => Common Formats: Raster images are commonly found in formats like JPEG, PNG, GIF, BMP, and TIFF. These formats are well-suited for photographs, detailed illustrations, and images with complex color variations.
+                            => Photographic Realism: Raster images excel at representing photographs and complex, detailed images because they can store a wide range of colors and shades. They are often used for images that require a high level of realism.
+                            => Editing: Raster images are typically edited using image editing software like Adobe Photoshop. Each pixel can be individually manipulated, allowing for detailed adjustments to color, brightness, and other attributes.
+                            => File Size: The file size of a raster image can be relatively large, especially for high-resolution images with many pixels. Compression techniques are often used to reduce file sizes while maintaining acceptable image quality.
+
+                            Disadvantages of Raster Image: When the image is scaled up or down, there might be loss in data in the image and it may appear blurry or distorted. 
+
+                            Advantages of Raster Image: Raster Image is good for storing images with very high detail like photos containing many elements as in a scenery. 
+
+                            (Raster Images are like raw bitmap of every pixel in the image)
+
+                            There are 2 types of Raster Images:
+                                1. Uncompressed Images: These images are not compressed at all and store pixel data in its original form. They offer the best image quality but result in larger file sizes. Common formats include BMP (Bitmap) and TIFF (Tagged Image File Format).
+
+                                2. Compressed Images: These images are compressed to somewhat extent and removes the redundant information or data. 
+                                                      There are again 2 types of Compressed Images:
+                                                        - Lossless Compression: These images are compressed in a way that retains all the original image data, allowing for perfect reconstruction. Common formats include PNG (Portable Network Graphics) and GIF (Graphics Interchange Format). PNG is especially popular for its lossless compression capabilities and it also supports 8, 16, 32 bit colours over GIF which only supports 8 bit colours. Although GIFs do happen to have animations.
+                                                        - Lossy Compression: These imaged are compressed in a way that there is some loss or original image data. Lossy compressed images are mostly used in sites or someplaces where the accuracy and the quality of images do not matter (icons or somewhat in sites) because they are small in sizes and save bandwidth and costs to maintain an image. Eg. JPEG (Joint Photographic Experts Group) or JPG. 
+
+
+            2. Vector Image: A vector image is a type of digital graphic that is created using mathematical formulas to define shapes, lines, curves, and colors. Unlike raster images (bitmap images), which are composed of a grid of pixels, vector images are described using geometric elements such as points, lines, and curves. Because they are not dependent on a fixed number of pixels, vector images are resolution-independent, meaning they can be scaled up or down without any loss of quality.
+                            Key characteristics of vector images include:
+                            => Mathematical Definitions: Vector images are constructed using mathematical equations that describe the positions of points, the paths of lines and curves, and the colors within the image. These mathematical descriptions are stored as data rather than pixel values.
+                            => Scalability: Vector images can be scaled to any size without a loss of detail or sharpness. This makes them ideal for graphics that need to be used in various contexts, from small icons to large banners.
+                            => Crisp Edges: Since vector images are not made up of pixels, they do not suffer from pixelation when scaled. The edges of shapes and lines in vector graphics remain sharp and smooth.
+                            => Small File Sizes: Vector files are typically smaller in size compared to their raster counterparts. This is because vector files only need to store mathematical instructions rather than the color information for each individual pixel.
+                            => Editable: Vector images are highly editable. You can easily modify shapes, colors, and other attributes using vector editing software like Adobe Illustrator or Inkscape. This makes vector graphics suitable for creating logos, illustrations, and other graphics that require precision and flexibility.
+                            => Common Formats: Common vector file formats include SVG (Scalable Vector Graphics), AI (Adobe Illustrator), EPS (Encapsulated PostScript), and PDF (Portable Document Format). SVG, in particular, is widely used for web-based vector graphics due to its compatibility with web browsers.
+
+                            Disadvantages of Vector Image: Images with a lot of elements and complex drawings will be complicated to store in a vector image.
+
+                            Advantages of Vector Images: It allowed us to scale up and scale down the image without any loss in data.
+
+                            (Vector Images are like they have certain mathematical equations attached to them, which allows us to scale up the image without any loss in data, cz it makes new elements using the equations)
+
+                            Extension example - SVG (Scalable Vector Graphics)
+
+                            Vector images are used in designing Logos or some billboard ads cs they need to be scaled up or down according to the requirement.
+        
+        - Size Comparison: TIFF> GIF> JPEG> WebP
+
+    - Media queries work by specifying conditions that must be met for the associated CSS rules to take effect. These conditions are typically based on the following factors:
+        = Viewport Width and Height: You can set rules to trigger at specific viewport widths or heights. For example, you might apply different styles when the viewport width is less than 768 pixels to optimize the layout for smaller screens.
+                                    e.g.,@media (max-width: 768px) {
+                                           /* CSS rules for screens with a width of 768 pixels or less */
+                                         }
+        = Device Orientation: You can specify different styles based on whether the device is in portrait or landscape orientation. This is useful for adjusting layouts when a user rotates their mobile device.
+                                    e.g., @media (orientation: landscape) {
+                                              /* CSS rules for landscape orientation */
+                                            }
+        = Device Type: Media queries can also target specific types of devices, such as screens with high resolution (retina displays) or print devices for creating print-friendly stylesheets.
+                                    e.g., @media (min-resolution: 300dpi) {
+                                              /* CSS rules for high-resolution screens */
+                                            }
+        = Media Types: You can define styles for different media types like screen, print, or speech. This allows you to create print-specific stylesheets or styles for screen readers.
+                                    e.g., @media print {
+                                              /* CSS rules for print media */
+                                            }
+    
+    - Media queries also mention the viewport, i.e., it can adjust according to the device the webpage is being rendered in. In the viewport we can mention the width and scale in the device which renders the website, so that we can view the website accordingly.
+
+    - We can also add conditions when the device width is below a certain pixel size. This is called responsive web design, i.e., to make websites which is responsive to various devices and do not appear broken or out of scale.
+
+
+LENGTH UNITS IN CSS
+    - There are 2 types of units in CSS that we use:
+        1. Absolute Units - These units are absolute and don't have a parent to inherit any properties of whatsoever. E.g., px (pixels), cm (centimeters), mm (millimeters), in (inches), etc.
+        2. Relative Units - These units are relative to some parent element and are based on those elements only. E.g., % (percentage), em, rem, vw (viewport width), vh (viewport height), etc.
+
+
+LAB WORK:
+1. Create a webpage to demonstrate the use of media queries in CSS.
+2. Create a webpage to demonstrate responsive web design in CSS.
