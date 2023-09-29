@@ -1,0 +1,198 @@
+29th of September, 2023
+
+JAVASCRIPT 
+	- JavaScript is a high-level, versatile, object-oriented, and dynamic programming language primarily used for front-end web development. It allows developers to add interactivity, manipulate the Document Object Model (DOM), and control the behavior of web pages. JavaScript is one of the core technologies of web development, along with HTML and CSS. Here are some key aspects of JavaScript:
+		1. Client-Side Scripting: JavaScript is primarily used on the client side (in web browsers) to enhance the functionality of web pages. It enables web developers to create dynamic and interactive user interfaces.
+		
+		2. Scripting Language: JavaScript is often referred to as a scripting language because it is typically executed by web browsers as a script. It doesn't require compilation like languages such as Java or C++.
+
+		3. Cross-Platform: JavaScript is supported by all modern web browsers, making it a cross-platform language. This means you can write JavaScript code that works consistently across different browsers and operating systems.
+
+		4. Dynamic Typing: JavaScript is dynamically typed, which means you don't need to specify data types for variables explicitly. The data type of a variable can change during runtime.
+
+		5. Prototypal Inheritance: JavaScript uses prototypal inheritance for object-oriented programming. Objects can inherit properties and methods directly from other objects.
+
+		6. Event-Driven: JavaScript is often used for event-driven programming. It can respond to user actions, such as clicks and keypresses, by executing specific functions or code blocks.
+
+		7. Libraries and Frameworks: JavaScript has a rich ecosystem of libraries and frameworks, such as jQuery, React, Angular, and Vue.js, that simplify and streamline web development tasks.
+
+		8. Node.js: Node.js is a server-side JavaScript runtime environment that allows developers to build server-side applications using JavaScript. This extends the use of JavaScript beyond the browser.
+
+		9. JSON: JavaScript Object Notation (JSON) is a widely used data interchange format. JavaScript can parse JSON data easily, making it a common choice for data transfer between web servers and clients.
+
+		10. Security: JavaScript is executed on the client side, so it must be used carefully to prevent security vulnerabilities such as Cross-Site Scripting (XSS) attacks.
+
+WHAT IS A SCRIPTING LANGUAGE?
+	- A scripting language, also known as a script language or script, is a type of programming language that is designed for a specific set of tasks or applications. Scripting languages are often used to automate and control software applications, manipulate data, and perform various tasks in a simplified and efficient manner. They are typically interpreted, which means the code is executed line by line by an interpreter, rather than being compiled into machine code like traditional programming languages.
+		Here are some key characteristics and uses of scripting languages:
+		1. Interpretation: Scripting languages are generally not compiled into machine code like traditional programming languages (e.g., C++ or Java). Instead, they are executed line by line by an interpreter, which reads and executes the code directly. This makes them more flexible and suitable for quick development and prototyping.
+		
+		2. High-Level Abstraction: Scripting languages provide a high level of abstraction, which means they offer simpler and more intuitive syntax for performing common tasks. This abstraction allows developers to focus on solving problems without worrying about low-level details.
+
+		3. Automation: Scripting languages are often used for automating repetitive tasks or processes. For example, they can be used to write scripts that automate file manipulation, data processing, system administration, and more.
+
+		4. Web Development: Many scripting languages are used for web development. For example, JavaScript is a scripting language that is widely used for creating dynamic and interactive web pages. Server-side scripting languages like PHP, Python, and Ruby are used to build web applications.
+
+		5. Customization: Scripting languages are commonly used to customize and extend the functionality of software applications. For instance, macros in Microsoft Excel are often written in a scripting language to automate spreadsheet tasks.
+
+		6. Rapid Prototyping: Scripting languages are well-suited for rapid prototyping and experimentation. Developers can quickly write and test code to validate concepts and ideas.
+
+		7. Dynamic Typing: Scripting languages typically use dynamic typing, where variable types are determined at runtime rather than compile time. This provides flexibility but may lead to runtime errors if not handled carefully.
+
+		8. Ease of Learning: Scripting languages are often designed to be easy to learn and use, making them accessible to a wide range of developers, including those without a formal computer science background.
+
+=> JavaScript also uses the "JIT" (Just In-Time) Compiler, which can compile the JS programs.
+=> ECMAScript (often abbreviated as ES) is a standardized scripting language specification that serves as the foundation for several programming languages, with JavaScript being the most well-known implementation. It defines the syntax, semantics, and behavior of the scripting language, ensuring consistency and interoperability across different implementations and platforms.
+
+
+NOTE - JavaScript is called a Dynamically typed as well as a weakly typed language.
+	It is because - 
+		1. Dynamically Typed:
+			= JavaScript is dynamically typed, which means that variable types are determined and checked at runtime rather than at compile time.
+			= In a dynamically typed language like JavaScript, you do not need to declare the data type of a variable explicitly when you define it.
+			= Variable types can change during the execution of a program. For example, a variable that initially holds a number can later be assigned a string value, and JavaScript will accommodate this change without a problem.
+		2. Weakly Typed:
+			= JavaScript is considered weakly typed (or loosely typed), which means that it allows operations between different data types without explicit type conversion (coercion).
+			= In a weakly typed language like JavaScript, the language itself tries to perform type coercion implicitly to make operations work.
+			= This can sometimes lead to unexpected behavior if not carefully managed, as the language may try to convert values in ways that may not align with the developer's intentions.
+
+JAVASCRIPT LIBRARIES
+	- JavaScript has various libraries which are developed by various companies, like 
+		1. React.js - Developed and maintained by Meta, and is widely popular.
+		2. Angular.js - Developed by Google but discontinued.
+		3. Vue.js
+
+JAVASCRIPT FUNCTIONALITIES
+	- Event Handling: JavaScript can respond to user interactions, such as clicks, keystrokes, and mouse movements, by attaching event listeners to HTML elements.
+	- AJAX Requests: JavaScript can make asynchronous requests to web servers using AJAX (Asynchronous JavaScript and XML) techniques. This allows web pages to fetch and display data without requiring a full page refresh.
+	- Client-Side Storage: JavaScript provides mechanisms like localStorage and sessionStorage to store data on the client's browser, enabling persistent user preferences and offline functionality.
+	- Web Animation: JavaScript can create animations and transitions by manipulating CSS properties or using libraries like GreenSock Animation Platform (GSAP).
+	- Server-Side Development: With Node.js, JavaScript can be used for server-side development, allowing developers to build server applications and APIs.
+	- Real-Time Communication: JavaScript can enable real-time communication through technologies like WebSockets or libraries like Socket.io.
+	- Authentication and Authorization: JavaScript can handle user authentication and authorization, including integrating with identity providers (e.g., OAuth) for secure logins.
+
+
+JAVASCRIPT USES IN A WEBSITE
+	- JavaScript can change HTML content.
+	- JavaScript can change HTML attribute values.
+	- JavaScript can change HTML styles (CSS).
+	- JavaScript can hide/show HTML elements.
+
+DATATYPES IN JS
+	Just like any other programming language, JS also has some types of data which it can understand. Some of them are - 
+		1. Number: Represents numeric values, including integers and floating-point numbers. For example:
+			e.g., let age = 25;
+			      let price = 19.99;
+		
+		2. String: Represents textual data, enclosed in single ('') or double ("") quotes. For example:
+			e.g., let name = "John";
+			      let message = 'Hello, world!';
+
+		3. Boolean: Represents a binary value, either true or false. Used for logical operations and conditionals. For example:
+			e.g., let isStudent = true;
+			      let isAdult = false;
+
+		4. Undefined: Represents a variable that has been declared but has not been assigned a value yet. Variables without values are initialized with undefined. For example:
+			e.g., let x;
+
+		5. Null: Represents an intentional absence of any object value or a null object pointer. For example:
+			e.g., let data = null;
+	
+		6. Symbol (ES6): Represents a unique and immutable value, often used as object property keys to prevent name collisions. Symbols are created using the Symbol() constructor. For example:
+			e.g., const uniqueKey = Symbol();
+
+		7. (Reference Datatype) Object: Represents a collection of key-value pairs, where keys are strings (or symbols) and values can be of any data type. Objects are versatile and used for complex data structures and custom data types. For example:
+			e.g., let person = {
+    				name: "Alice",
+    				age: 30
+			       };
+
+		8. (Reference Datatype) Array: Represents an ordered list of values, accessed by numeric indices. Arrays can contain elements of different data types. For example:
+			e.g., let colors = ["red", "green", "blue"];
+
+		9. (Reference Datatype) Function: Functions in JavaScript are objects. They can be assigned to variables, passed as arguments, and returned from other functions. Functions are used to define reusable code blocks. For example:
+			e.g., function greet(name) {
+   				 return "Hello, " + name + "!";
+			      }
+
+		10. Date: Represents dates and times. The Date object provides methods for working with dates and times. For example:
+			e.g., let currentDate = new Date();
+
+
+WAYS TO INCLUDE JAVASCRIPT IN A WEB PAGE
+	There are following three ways in which users can add JavaScript to HTML pages.
+		1. Embedding code:-
+			To add the JavaScript code into the HTML pages, we can use the <script>.....</script> tag of the HTML that wrap around JavaScript code inside the HTML program. Users can also define JavaScript code in the <body> tag (or we can say body section) or <head> tag because it completely depends on the structure of the web page that the users use.
+			e.g., 
+			<!DOCTYPE html >  
+			<html>  
+			<head>  
+			<title> page title</title>  
+			<script>  
+			document.write("Welcome to Javatpoint");  
+			</script>  
+			</head>  
+			<body>  
+			<p>Inthis example we saw how to add JavaScript in the head section </p>  
+			</body>  
+			</html> 
+		
+			We can also define the JavaScript code in the <body> tags or body section.
+			e.g.,
+			<!DOCTYPE html >  
+			<html>  
+			<head>  
+			<title> page title</title>  
+			</head>  
+			<body>  
+			<script>  
+			document.write("Welcome to Javatpoint");  
+			</script>  
+			<p> In this example we saw how to add  JavaScript in the body section </p>  
+			</body>  
+			</html>
+
+		2. Inline code:-
+			Generally, this method is used when we have to call a function in the HTML event attributes. There are many cases (or events) in which we have to add JavaScript code directly eg., OnMover event, OnClick, etc.
+			e.g.,
+			<!DOCTYPE html >  
+			<html>  
+			<head>  
+			<title> page title</title>  
+			</head>  
+			<body>  
+			<p>  
+			<a href="#" onClick="alert('Welcome !');">Click Me</a>  
+			</p>  
+			<p> in this example we saw how to use inline JavaScript or directly in an HTML tag. </p>  
+			</body> 
+			</html>
+	
+		3. External file:-
+			We can also create a separate file to hold the code of JavaScript with the (.js) extension and later incorporate/include it into our HTML document using the src attribute of the <script> tag. It becomes very helpful if we want to use the same code in multiple HTML documents. It also saves us from the task of writing the same code over and over again and makes it easier to maintain web pages.
+			e.g.,
+			<html>  
+			<head>  
+			<meta charset="utf-8">  
+			<title>Including a External JavaScript File</title>  
+			</head>  
+			<body>  
+			<form>  
+			<input type="button" value="Result" onclick="display()"/>  
+			</form>  
+			<script src="hello.js">  
+			</script>  
+			</body>
+			</html>
+
+		Now, in a separate file called "Hello.js", the following contents are saved...
+			function display() {  
+				alert("Hello World!");  
+			}
+
+
+NOTE - If we write the <script> tag in <head> as well as in the <body> part, at first, the script in the head part will run, and after that, the script in the body part will run. It's not just for JS, it is the property of HTML, i.e., anything written in the head tag will run first. After which, the tags and codes written in the body tag will run.  
+
+
+
+
