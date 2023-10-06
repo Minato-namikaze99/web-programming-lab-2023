@@ -1,0 +1,278 @@
+06th of October, 2023
+
+- We know that we can include JS in an HTML page using the <script></script> tag.
+
+- To run some codes in JS, we can use the console in the Inspect element in a web browser.
+
+OPERATORS IN JS
+    - Arithmetic Operators - In JavaScript, arithmetic operators are used to perform mathematical operations on numbers. Here are the basic arithmetic operators in JavaScript:
+
+        1. Addition (+): The addition operator is used to add two numbers or concatenate strings.
+            e.g.,
+            var result = 5 + 3; // result will be 8
+            var stringResult = "Hello, " + "world!"; // stringResult will be "Hello, world!"
+
+        2. Subtraction (-): The subtraction operator is used to subtract one number from another.
+            e.g.,
+            var result = 10 - 3; // result will be 7
+        3. Multiplication (*): The multiplication operator is used to multiply two numbers.
+            e.g.,
+            var result = 4 * 6; // result will be 24
+
+        4. Division (/): The division operator is used to divide one number by another.
+            e.g.,
+            var result = 12 / 4; // result will be 3
+
+        5. Modulus (%): The modulus operator is used to find the remainder when one number is divided by another.
+            e.g.,
+            var remainder = 10 % 3; // remainder will be 1
+
+        6. Increment (++) and Decrement (--): These operators are used to increase or decrease the value of a variable by 1, respectively.
+            e.g.,
+            var x = 5;
+            x++; // x is now 6
+            x--; // x is now 5 again
+
+    - Assignment Operators - Assignment operators in JavaScript are used to assign values to variables. They allow you to take a value or the result of an expression and store it in a variable. Here are the commonly used assignment operators in JavaScript:
+
+        1. Assignment Operator (=): The basic assignment operator is used to assign a value to a variable.
+                e.g.,
+                var x = 10; // Assigns the value 10 to the variable x
+
+        2. Addition Assignment Operator (+=): This operator adds the value on the right-hand side to the variable on the left-hand side and assigns the result to the left-hand side variable.
+                e.g.,
+                var x = 5;
+                x += 3; // Equivalent to x = x + 3; (x is now 8)
+        3. Subtraction Assignment Operator (-=): This operator subtracts the value on the right-hand side from the variable on the left-hand side and assigns the result to the left-hand side variable.
+                e.g.,
+                var x = 10;
+                x -= 4; // Equivalent to x = x - 4; (x is now 6)
+        4. Multiplication Assignment Operator (*=): This operator multiplies the variable on the left by the value on the right and assigns the result to the left-hand side variable.
+                e.g.,
+                var x = 3;
+                x *= 2; // Equivalent to x = x * 2; (x is now 6)
+        5. Division Assignment Operator (/=): This operator divides the variable on the left by the value on the right and assigns the result to the left-hand side variable.
+                e.g.,
+                var x = 10;
+                x /= 2; // Equivalent to x = x / 2; (x is now 5)
+        6. Modulus Assignment Operator (%=): This operator calculates the modulus of the variable on the left by the value on the right and assigns the result to the left-hand side variable.
+                e.g.,
+                var x = 10;
+                x %= 3; // Equivalent to x = x % 3; (x is now 1)
+                var y = 5.5;
+                y %= 2 //Equivalent to y = y % 2 = 1.5; (yes, a float indeed! Just stores the remainder doesn't care whether it is in float or int) 
+
+        7. Exponentiation Assignment Operator (=):** This operator raises the variable on the left to the power of the value on the right and assigns the result to the left-hand side variable. This operator is introduced in ECMAScript 2016 (ES7).
+                e.g.,
+                var x = 2;
+                x **= 3; // Equivalent to x = x ** 3; (x is now 8)
+
+    - Comparison Operators - Comparison operators in JavaScript are used to compare two values or expressions and return a Boolean result (true or false) based on the comparison. These operators are commonly used in conditional statements and loops to make decisions based on the comparison results. Here are the primary comparison operators in JavaScript:
+
+        1. Equality (==): The equality operator checks if two values are equal. It performs type coercion, meaning it converts the operands to the same type before comparing.
+                e.g.,
+                var x = 5;
+                var y = "5";
+                console.log(x == y); // true (values are equal after type coercion)
+        
+        2. Inequality (!=): The inequality operator checks if two values are not equal. Like the equality operator, it also performs type coercion.
+                e.g.,
+                var x = 5;
+                var y = "5";
+                console.log(x != y); // false (values are equal after type coercion)
+
+        3. Strict Equality (===): The strict equality operator checks if two values are equal without performing type coercion. It requires both the value and the data type to be the same for the comparison to be true.
+                e.g., 
+                var x = 5;
+                var y = "5";
+                console.log(x === y); // false (values are equal, but data types are different)
+
+        4. Strict Inequality (!==): The strict inequality operator checks if two values are not equal without performing type coercion.
+                e.g.,
+                var x = 5;
+                var y = "5";
+                console.log(x !== y); // true (values are equal, but data types are different)
+
+        5. Greater Than (>): The greater-than operator checks if the value on the left is greater than the value on the right.
+                e.g.,
+                var x = 10;
+                var y = 5;
+                console.log(x > y); // true
+
+        6. Less Than (<): The less-than operator checks if the value on the left is less than the value on the right.
+                e.g.,
+                var x = 5;
+                var y = 10;
+                console.log(x < y); // true
+
+        7. Greater Than or Equal To (>=): The greater-than-or-equal-to operator checks if the value on the left is greater than or equal to the value on the right.
+                e.g.,
+                var x = 10;
+                var y = 10;
+                console.log(x >= y); // true
+
+        8. Less Than or Equal To (<=): The less-than-or-equal-to operator checks if the value on the left is less than or equal to the value on the right.
+                e.g.,
+                var x = 5;
+                var y = 10;
+                console.log(x <= y); // true
+
+    - Logical Operators - Logical operators in JavaScript are used to combine or manipulate Boolean values (true or false) to make decisions or perform logical operations. There are three primary logical operators in JavaScript: && (logical AND), || (logical OR), and ! (logical NOT).
+
+        1. Logical AND (&&): The logical AND operator returns true if both operands are true, and false otherwise. It is often used to check if multiple conditions are met.
+            e.g.,
+            var x = true;
+            var y = false;
+
+            console.log(x && y); // false (Both x and y are not true)
+
+        2. Logical OR (||): The logical OR operator returns true if at least one of the operands is true, and false if both operands are false. It is commonly used when you want to check if at least one condition is met.
+            e.g.,
+            var x = true;
+            var y = false;
+
+            console.log(x || y); // true (x is true, even though y is false)
+
+        3. Logical NOT (!): The logical NOT operator negates a Boolean value. It returns true if the operand is false, and false if the operand is true. It is often used to invert the value of a condition.
+            e.g.,
+            var x = true;
+            var y = false;
+
+            console.log(!x); // false (x is true, but !x is false)
+            console.log(!y); // true (y is false, but !y is true)
+
+
+PRINTING STUFF IN JS
+    - In JavaScript, you can display or print information to the console or directly to a web page. Here are some common ways to print or display content in JavaScript:
+
+        1. Using console.log(): This is the most common way to print messages or values to the console, which is a part of most web browsers' developer tools. It's useful for debugging and seeing the output of your code.
+                e.g.,
+                "javascript"
+                console.log("Hello, world!"); // Prints "Hello, world!" to the console
+
+        2. Alert Dialog: You can use the alert() function to display a pop-up alert box with a message.
+                e.g.,
+                "javascript"
+                alert("Hello, world!"); // Displays an alert box with the message "Hello, world!"
+            -> Note that alert() is often considered intrusive and may disrupt the user experience, so it should be used sparingly.
+
+        3. Using document.write(): You can use the document.write() method to write content directly to the HTML document. However, be cautious when using this method, as it can overwrite the entire document if called after the document has loaded.
+                e.g.,
+                "javascript"
+                document.write("Hello, world!"); // Writes "Hello, world!" to the document
+
+        4. Modifying HTML Elements: You can access and modify HTML elements on a webpage using JavaScript. For example, you can change the content of an HTML element with a specific id attribute using the innerHTML property.
+                e.g.,
+                "html"
+
+                <p id="output"></p>
+
+                "javascript"
+
+                document.getElementById("output").innerHTML = "Hello, world!";
+
+        5. Using console.info(), console.warn(), and console.error(): These methods are variations of console.log() and are used to print messages with different levels of importance and styling in the console.
+                e.g.,
+                "javascript"
+                console.info("This is an informational message.");
+                console.warn("This is a warning message.");
+                console.error("This is an error message.");
+
+        6. Using Template Literals: You can use template literals (backticks ``) to embed expressions within strings and then print them using console.log() or other methods.
+                e.g.,
+                "javascript"
+                const name = "Alice";
+                console.log(`Hello, ${name}!`); // Prints "Hello, Alice!"
+
+        7. Writing to the Web Page: You can create or modify HTML elements using JavaScript and append them to the document to display content dynamically.
+                e.g.,
+                "html"
+
+                <div id="output"></div>
+
+                "javascript"
+
+                const outputDiv = document.getElementById("output");
+                const message = document.createElement("p");
+                message.textContent = "Hello, world!";
+                outputDiv.appendChild(message);
+
+
+VARIABLES IN JS
+In JavaScript, variables are used to store and manage data in your programs. Variables act as containers that hold values, which can be numbers, strings, objects, functions, or other types of data. Here are the basics of working with variables in JavaScript:
+
+    - Declaring Variables: To declare a variable in JavaScript, you can use the var, let, or const keyword followed by the variable name. For example:
+        var age;     // Declaring a variable named 'age' using 'var'
+        let name;    // Declaring a variable named 'name' using 'let'
+        const pi = 3.14;  // Declaring a constant variable 'pi' using 'const'
+        
+    -> var was historically used to declare variables in JavaScript but has some scope-related quirks. It's less commonly used now.
+    -> let is used to declare variables with block-level scope, making it preferable in many cases.
+    -> const is used to declare constants whose values should not change after assignment.
+    
+    - Assigning Values: You can assign values to variables using the = operator. For example:
+        age = 30;     // Assigning the value 30 to the 'age' variable
+        name = "John";   // Assigning the string "John" to the 'name' variable
+
+        You can also declare and assign a value to a variable in a single step:
+            let city = "New York";
+    
+    - Data Types: JavaScript is a dynamically typed language, which means you don't have to explicitly specify the data type of a variable. JavaScript will determine the data type based on the assigned value. Common data types include:
+        => Numbers (e.g., 5, 3.14)
+        => Strings (e.g., "Hello, world!")
+        => Booleans (e.g., true, false)
+        => Objects (e.g., { key: "value" })
+        => Arrays (e.g., [1, 2, 3])
+        => Functions (e.g., function myFunction() { })
+
+    - Variable Naming Rules:
+        => Variable names must begin with a letter, underscore (_), or dollar sign ($).
+        => Subsequent characters in variable names can include letters, digits, underscores, or dollar signs.
+        => Variable names are case-sensitive (myVariable and myvariable are different).
+        => Avoid using reserved words as variable names (e.g., var, function, if, etc.).
+
+    - Scope: Variables can have different scopes, which determine where in your code the variable is accessible. The scope of a variable can be global (accessible throughout the entire program) or local (limited to a specific function or block of code).
+
+    - Hoisting: JavaScript hoists variable declarations to the top of their containing scope. This means that you can use a variable before it's declared, but it will have an initial value of undefined.
+            console.log(a); // undefined
+            var a = 10;
+        To avoid confusion and bugs, it's a good practice to declare variables at the top of their scope.
+
+    - Constants: Constants are declared using the const keyword and cannot be reassigned after their initial value is set.
+        e.g.,
+        const pi = 3.14;
+    
+    - Let vs. Var: When declaring variables, prefer let over var in modern JavaScript, as let has block-level scope, which can help prevent unexpected variable behavior.
+        e.g.,
+        let x = 10; // Preferred
+        var y = 20; // Less common
+
+
+STRICT MODE IN JS
+    - JavaScript Strict Mode is a feature introduced in ECMAScript 5 (ES5) that allows you to opt into a more restricted variant of JavaScript. When you enable strict mode within a JavaScript program or function, it enforces a stricter set of rules and error-checking, which can help you write more reliable and maintainable code. Strict mode is designed to catch common coding mistakes and prevent potentially problematic behavior. Here are some key aspects of JavaScript Strict Mode:
+
+    - Enabling Strict Mode: To enable strict mode, you simply add a special string literal "use strict"; at the beginning of a script or within a function. For example:
+            "use strict";
+
+    - When "use strict"; is present, strict mode is enabled for the entire script or function.
+
+    - Benefits and Restrictions: Strict mode provides several benefits, including:
+        => Preventing the use of undeclared variables: In non-strict mode, forgetting to declare a variable with var, let, or const creates an implicit global variable. In strict mode, this is an error.
+
+        => Eliminating this coercion: In strict mode, if you forget to bind this explicitly, it remains undefined in functions rather than automatically referring to the global object (e.g., window in a browser).
+
+        => Disallowing duplicate parameter names in function declarations.
+
+        => Restricting assignments that would otherwise silently fail or have unexpected side effects.
+
+        => Preventing certain syntactical mistakes and potentially error-prone behavior.
+
+    - Scope Restrictions: In strict mode, variables declared with var are scoped to the nearest containing function or the global scope. In non-strict mode, var declarations are hoisted to the top of their containing function or script, which can lead to unexpected behavior.
+
+    - Error Handling: In strict mode, certain silent errors are turned into exceptions. For example, assigning a value to an undeclared variable will throw a ReferenceError instead of creating an implicit global variable.
+
+    - Security Enhancements: Strict mode helps mitigate security risks by disallowing the use of deprecated and potentially dangerous features, such as the with statement and eval with variable declarations.
+
+    - Performance Improvements: While not the primary goal, strict mode code can sometimes run faster than equivalent non-strict mode code because it eliminates certain types of JavaScript operations that are relatively slow.
+
+    - Recommended Best Practice: It's generally recommended to use strict mode in all your JavaScript code, whether for small scripts or larger applications. It helps catch common mistakes early and encourages cleaner and more maintainable code.
