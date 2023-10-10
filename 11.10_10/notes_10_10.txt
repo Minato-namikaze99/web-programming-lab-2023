@@ -1,0 +1,7 @@
+10th of October, 2023
+
+LAB WORK OF LAST CLASS	
+	1. Create a web page to demonstrate the use of JS alert(), confirm() and prompt().
+	2. Using JS, check if a given integer is positive, negative or neither.
+	3. using JS, check if a given positive integer is prime or not.
+	4. Using JS, calculate and print the first 20 numbers of the fibonacci series.
