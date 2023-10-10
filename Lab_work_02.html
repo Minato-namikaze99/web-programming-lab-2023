@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Checker</title>
+</head>
+<body>
+    <h1>Number Checker</h1>
+    <label for="numberInput">Enter an integer:</label>
+    <input type="number" id="numberInput">
+    <button onclick="checkNumber()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+            const number = parseInt(numberInput);
+
+            if (isNaN(number)) {
+                resultElement.textContent = "Please enter a valid number.";
+            } else {
+                if (number > 0) {
+                    resultElement.textContent = "Positive";
+                } else if (number < 0) {
+                    resultElement.textContent = "Negative";
+                } else {
+                    resultElement.textContent = "Zero";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Dialogs Demo</title>
+</head>
+<body>
+
+<h1>JavaScript Dialogs Demo</h1>
+
+<button onclick="showAlert()">Show Alert</button>
+<button onclick="showConfirm()">Show Confirm</button>
+<button onclick="showPrompt()">Show Prompt</button>
+
+<script>
+    function showAlert() {
+        alert("This is an alert!");
+    }
+
+    function showConfirm() {
+        const result = confirm("Do you want to continue?");
+        if (result) {
+            alert("You clicked OK!");
+        } else {
+            alert("You clicked Cancel.");
+        }
+    }
+
+    function showPrompt() {
+        const inputValue = prompt("Please enter your name:", "John Doe");
+        if (inputValue) {
+            alert("Hello, " + inputValue + "!");
+        } else {
+            alert("You canceled the prompt.");
+        }
+    }
+</script>
+
+</body>
+</html>
