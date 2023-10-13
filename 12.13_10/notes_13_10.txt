@@ -1,0 +1,239 @@
+13th of October, 2023
+
+LET KEYWORD IN JS
+    - In JavaScript, the let keyword is used for declaring variables before use. This is part of JavaScript's variable declaration and scoping rules. Here's how it works:
+        1. Variable Declaration with let:
+            You can declare a variable using the let keyword like this:
+                let myVariable;
+            This declares a variable named myVariable without initializing it. It's essentially creating a placeholder for a value.
+
+        2. Variable Initialization:
+            You can also declare and initialize a variable in a single step:
+                let myVariable = 10;
+            In this case, myVariable is declared and assigned the value 10.
+
+        3. Variable Scoping:
+            Variables declared with let have block-level scope. This means they are only accessible within the block in which they are defined. For example:
+                function exampleFunction() {
+                    let x = 5;
+                    if (true) {
+                        let y = 10;
+                        console.log(x); // Accessible, outputs 5
+                    }
+                    console.log(y); // Error: y is not defined
+                    }
+                In the above code, x is accessible inside the if block, but y is not accessible outside of it.
+
+        4. Temporal Dead Zone (TDZ):
+            Variables declared with let are subject to the Temporal Dead Zone (TDZ). This means that you cannot access a let variable before it's declared. For example:
+
+                console.log(x); // Error: Cannot access 'x' before initialization
+                let x = 5;
+            It's important to declare a let variable before trying to use it within the same block.
+
+
+FUNCTIONS IN JS
+    - In JavaScript, functions are a fundamental concept, and they play a crucial role in the language. Functions are blocks of reusable code that can be defined and executed. They can take input values (parameters) and return output values. Just like every other programming language, we need to call the function to use it. Here's an overview of functions in JavaScript:
+        1. Function Declaration:
+            You can declare a function using the function keyword. Function declarations have the following syntax:
+
+                function functionName(parameters) {
+                    // Function code here
+                }
+
+            Example:
+
+                function greet(name) {
+                    console.log(`Hello, ${name}!`);
+                }
+        2. Function Expression:
+            You can also define a function as an expression, which is a function stored in a variable. Function expressions have the following syntax:
+
+                const functionName = function(parameters) {
+                    // Function code here
+                };
+
+            Example:
+
+                const add = function(a, b) {
+                    return a + b;
+                };
+
+        3. Arrow Functions (ES6):
+            In modern JavaScript, you can use arrow functions, which provide a more concise syntax for defining functions. Arrow functions are often used for shorter, one-liner functions. They look like this:
+
+                const functionName = (parameters) => {
+                    // Function code here
+                };
+
+            Example:
+
+                const square = (x) => x * x;
+    
+        4. Function Invocation: 
+            To execute a function, you simply call it by using its name followed by parentheses, and you can pass arguments (values) to the function as parameters.
+
+            Example:
+
+                greet("Alice"); // Calling the greet function
+                const result = add(3, 4); // Calling the add function
+
+        5. Return Statement:
+            Functions can return values using the return statement. The returned value can be used in other parts of your code.
+
+            Example:
+
+                function multiply(a, b) {
+                    return a * b;
+                }
+                const product = multiply(2, 3); // product will be 6
+    
+        6. Function Scope:
+            JavaScript functions have their own scope, which means that variables declared within a function are usually local to that function. They are not accessible outside the function unless specifically exposed.
+
+        7. Anonymous Functions: 
+            Functions can also be declared without a name, which is known as an anonymous function. These are often used as callback functions or for immediate invocation.
+
+                const anonymous = function() {
+                    console.log("This is an anonymous function");
+                };
+
+                // Immediately invoked anonymous function
+                (function() {
+                    console.log("Immediately invoked anonymous function");
+                })();
+
+
+        => Function Parameters and Arguments:
+            Functions can accept parameters (variables used in the function declaration) and arguments (actual values passed when calling the function). Parameters are placeholders, while arguments are the real values.
+            Example:              
+                function example(a, b) {
+                    // a and b are parameters
+                    console.log(a + b);
+                }
+
+                example(2, 3); // 2 and 3 are arguments
+
+
+SCOPE OF VARIABLES IN JS
+    - In JavaScript, variable scope refers to the context or region in which a variable is accessible and can be used. Understanding variable scope is crucial because it determines where you can access and manipulate a variable within your code. JavaScript has two main types of variable scope: global scope and local scope.
+
+        1. Global Scope: Variables declared outside of any function or block have global scope. They can be accessed and modified from anywhere in the JavaScript code, including within functions. Global variables are declared using var, let, or const at the top level of your code.
+
+            Example:
+                var globalVar = "I'm a global variable";
+
+                function someFunction() {
+                    console.log(globalVar); // Accessible from within the function
+                }
+
+                someFunction(); // Calls the function
+                console.log(globalVar); // Accessible outside the function
+            
+            It's important to note that global variables can introduce issues, such as unintended variable overwriting or conflicts, and can make code harder to maintain. It's a best practice to minimize the use of global variables.
+
+        2. Local Scope: Variables declared inside a function, block, or any other enclosed context have local scope. They are only accessible within that specific context, and they do not interfere with similarly named variables in other scopes. Local variables are declared using var, let, or const within a function or block.
+
+            Example:
+
+                function localScopeExample() {
+                    var localVar = "I'm a local variable";
+                    console.log(localVar); // Accessible within the function
+                }
+
+                localScopeExample(); // Calls the function
+                console.log(localVar); // Error: localVar is not defined outside the function
+
+            In the above example, localVar is only accessible within the localScopeExample function.
+
+        => Function Scope vs. Block Scope (ES6):
+            In modern JavaScript (ES6 and later), you can use let and const to create block-scoped variables. Variables declared with let and const are confined to the nearest block, which can be a function, loop, or any pair of curly braces ({}).
+
+            Example:
+                function blockScopeExample() {
+                    if (true) {
+                        let blockVar = "I'm a block-scoped variable";
+                        console.log(blockVar); // Accessible within the block
+                    }
+                    console.log(blockVar); // Error: blockVar is not defined outside the block
+                }
+
+            In the above example, blockVar is only accessible within the if block.
+
+        => Variable Hoisting: JavaScript has variable hoisting, which means that variable declarations are moved to the top of their containing scope during the compilation phase. However, the initializations are not hoisted. Variables declared with let and const are also hoisted but remain in the "temporal dead zone" until they are initialized.
+
+            Example:
+
+                console.log(hoistedVar); // Outputs 'undefined'
+                var hoistedVar = "I'm hoisted";
+
+                console.log(hoistedLetVar); // Error: Cannot access 'hoistedLetVar' before initialization
+                let hoistedLetVar = "I'm hoisted with let";
+
+        NOTE - If we declare a variable with var, let and const, it is by default a local variable. And without any of these, it becomes a global variable.
+
+ACCEPTING THE DATA IN HTML FORMS
+    - In HTML, you can create forms to collect user input, and you can use JavaScript to access and manipulate the data entered in these forms. To access form data in JavaScript, you typically use the following methods and techniques:
+
+        1. Using the document.forms Collection:
+            You can access form elements in JavaScript using the document.forms collection. This collection contains references to all the forms on the page, and you can access a specific form by its index or its name or id attribute.
+            e.g.,
+                <form name="myForm">
+                    <input type="text" name="username" id="username">
+                    <input type="password" name="password" id="password">
+                    <input type="submit" value="Submit" onclick="submitForm()">
+                </form>
+
+                <script>
+                    function submitForm() {
+                        var form = document.forms.myForm; // Access the form by its name
+                        var username = form.username.value; // Access input field by name
+                        var password = form.password.value;
+                        console.log("Username: " + username);
+                        console.log("Password: " + password);
+                    }
+                </script>
+
+        2. Using getElementById and querySelector Methods:
+            You can also access form elements directly using their id attributes with getElementById or querySelector.
+            e.g.,
+                <form>
+                    <input type="text" id="username">
+                    <input type="password" id="password">
+                    <input type="submit" value="Submit" onclick="submitForm()">
+                </form>
+
+                <script>
+                    function submitForm() {
+                        var username = document.getElementById("username").value; // Access by id
+                        var password = document.querySelector("#password").value; // Access by CSS selector
+                        console.log("Username: " + username);
+                        console.log("Password: " + password);
+                    }
+                </script>
+
+        3. Using the onsubmit Event Handler:
+            You can access form data when the form is submitted by attaching an onsubmit event handler to the form element. This handler can prevent the form from submitting, validate the input, and access the form data.
+            e.g.,
+                <form id="myForm" onsubmit="return submitForm()">
+                    <input type="text" name="username">
+                    <input type="password" name="password">
+                    <input type="submit" value="Submit">
+                </form>
+
+                <script>
+                    function submitForm() {
+                        var form = document.getElementById("myForm");
+                        var username = form.elements.username.value; // Access input field by name
+                        var password = form.elements.password.value;
+                        console.log("Username: " + username);
+                        console.log("Password: " + password);
+                        // Add validation and form submission logic here
+                        return false; // Prevent form submission
+                    }
+                </script>
+
+        
+
+LAB WORK 
+    1. Add functionality to the to the simple calculator created in Day 5, so that the arithmetic operations can be carried out. You may also add some styling, so that the numbers amd the components are properly aligned and are of proper size.
