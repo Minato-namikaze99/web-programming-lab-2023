@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #output {
+
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="output">
+    </p>
+
+    <script>
+        let animals = ['tiger', 'lion', 'goat', 'cheetah'];
+
+        // Method 1: concat()
+        let newanimals = animals.concat(['dog', 'cat']);
+        displayResult("Concatenated array: ", newanimals);
+
+        // Method 2: join()
+        let joinedanimals = animals.join(', ');
+        displayResult("Joined array: ", joinedanimals);
+
+        // Method 3: indexOf()
+        let indexOflion = animals.indexOf('lion');
+        displayResult("Index of 'lion': ", indexOflion);
+
+        // Method 4: sort()
+        animals.sort();
+        displayResult("Sorted array: ", animals);
+
+        // Method 5: pop()
+        let poppedanimal = animals.pop();
+        displayResult("Popped animal: ", poppedanimal);
+        displayResult("Array after pop(): ", animals);
+
+        // Method 6: push()
+        animals.push('fox');
+        displayResult("Array after push('fox'): ", animals);
+
+        function displayResult(message, result) {
+            document.getElementById('output').innerHTML += `<p><strong>${message}</strong> ${result}</p>`;
+        }
+    </script>
+</body>
+</html>

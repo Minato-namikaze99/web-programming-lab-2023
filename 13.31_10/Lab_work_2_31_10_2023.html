@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Strings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2>String Manipulation</h2>
+        <p id="demoString">Hello, JavaScript!</p>
+        <button onclick="toUpperCase()">To Uppercase</button>
+        <button onclick="toLowerCase()">To Lowercase</button>
+        <button onclick="concatStrings()">Concatenate</button>
+    </div>
+
+    <div>
+        <h2>Searching and Replacing</h2>
+        <p id="searchString">Sample Texts are inserted here</p>
+        <button onclick="charAtExample()">charAt(10)</button>
+        <button onclick="indexOfExample('sample')">indexOf('sample')</button>
+        <button onclick="replaceExample('sample', 'example')">Replace 'sample'</button>
+    </div>
+
+    <script>
+        function toUpperCase() {
+            const text = document.getElementById('demoString');
+            text.textContent = text.textContent.toUpperCase();
+        }
+
+        function toLowerCase() {
+            const text = document.getElementById('demoString');
+            text.textContent = text.textContent.toLowerCase();
+        }
+
+        function concatStrings() {
+            const text = document.getElementById('demoString');
+            text.textContent = text.textContent.concat(' - JavaScript');
+        }
+
+        function charAtExample() {
+            const text = document.getElementById('searchString');
+            const char = text.textContent.charAt(10);
+            alert("Character at index 10: " + char);
+        }
+
+        function indexOfExample(substring) {
+            const text = document.getElementById('searchString');
+            const index = text.textContent.indexOf(substring);
+            alert("Index of '" + substring + "': " + index);
+        }
+
+        function replaceExample(oldStr, newStr) {
+            const text = document.getElementById('searchString');
+            text.textContent = text.textContent.replace(oldStr, newStr);
+        }
+    </script>
+</body>
+</html>
