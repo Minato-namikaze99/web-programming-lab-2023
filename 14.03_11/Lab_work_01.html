@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #image-container {
+            position: relative;
+        }
+
+        #image-container img {
+            width: 300px;
+            height: 200px;
+        }
+
+        #overlay-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <img id="original-image" src="original-image.jpeg" alt="Original Image" onmouseover="changeImage()" onmouseout="restoreImage()">
+        <img id="overlay-image" src="new-image.jpeg" alt="New Image">
+    </div>
+
+    <script>
+        function changeImage() {
+            document.getElementById('original-image').style.display = 'none';
+            document.getElementById('overlay-image').style.display = 'block';
+        }
+
+        function restoreImage() {
+            document.getElementById('original-image').style.display = 'block';
+            document.getElementById('overlay-image').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
