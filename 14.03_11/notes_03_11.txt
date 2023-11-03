@@ -1,0 +1,203 @@
+3rd of November, 2023
+
+DOM IN WEB DEVELOPMENT
+    - In web development, "DOM" stands for Document Object Model. The DOM is a programming interface for web documents, such as HTML and XML, and represents the structure and content of a web page as a tree-like data structure. It allows programmers to access and manipulate the content, structure, and style of a web page using a scripting language like JavaScript.
+
+HTML DOM
+    - The HTML DOM, or HTML Document Object Model, is a specific implementation of the Document Object Model (DOM) that represents the structure and content of an HTML document. It is a hierarchical, tree-like structure that represents all the elements and their relationships within an HTML document, making it possible for developers to access and manipulate the content and structure of a web page using scripting languages like JavaScript. 
+        Here are some key points about the HTML DOM:
+            1. Tree Structure: The HTML DOM represents an HTML document as a tree structure, where each HTML element is represented as a node in the tree. This includes elements like headings, paragraphs, links, images, forms, and more. Even text content and attributes are represented as nodes.
+            2. Hierarchical: The tree structure is hierarchical, with a root node that represents the entire HTML document, and child nodes for all the HTML elements within the document. These child nodes can further have their child nodes, forming a nested structure that mirrors the structure of the HTML document.
+            3. Dynamic: The HTML DOM is dynamic, meaning that it reflects the current state of the web page. If you use JavaScript to modify the DOM, those changes are immediately reflected in the displayed web page without requiring a page refresh.
+            4. Access and Manipulation: Web developers can use scripting languages like JavaScript to access and manipulate the content, structure, and attributes of HTML elements in the DOM. For example, you can change the text of a paragraph, change the attributes of an image, or add new elements to the page.
+            5. Cross-Browser Compatibility: The HTML DOM provides a standardized way to interact with HTML documents, which helps ensure compatibility across different web browsers.
+            6. Events: The HTML DOM also handles events like clicks, mouse movements, and keyboard input, allowing developers to attach event listeners to HTML elements to respond to user interactions.
+
+HTML DOM & JAVASCRIPT
+    - HTML DOM methods are actions you can perform (on HTML Elements). HTML DOM properties are values (of HTML Elements) that you can set or change.
+    - These changes are made possible by JavaScript.
+    - In the DOM, all HTML elements are defined as objects.
+        - The programming interface is the properties and methods of each object.
+        - A property is a value that you can get or set (like changing the content of an HTML element).
+        - A method is an action you can do (like add or deleting an HTML element).
+
+    - The "getElementById" Method
+        - The most common way to access an HTML element is to use the id of the element.
+        e.g., 
+
+            <html>
+            <body>
+
+            <p id="demo"></p>
+
+            <script>
+            document.getElementById("demo").innerHTML = "Hello World!";
+            </script>
+
+            </body>
+            </html>
+
+        - In the example above the getElementById method used id="demo" to find the element.
+
+    - The "innerHTML" Property
+         - The easiest way to get the content of an element is by using the innerHTML property.
+         - The innerHTML property is useful for getting or replacing the content of HTML elements.
+
+DOM METHODS 
+    - The Document Object Model (DOM) provides a wide range of methods and properties that allow developers to access and manipulate elements and their attributes within an HTML document. These methods can be used with scripting languages like JavaScript to interact with and modify the DOM. 
+        Here are some common DOM methods:
+        1. getElementById(id): This method retrieves an element from the DOM using its unique ID attribute.
+            e.g.,
+                var element = document.getElementById("myElement");
+        
+        2. getElementsByClassName(className): Retrieves a collection of elements with a specific class name.
+            e.g.,
+                var elements = document.getElementsByClassName("myClass");
+        
+        3. getElementsByTagName(tagName): Retrieves a collection of elements with a specific HTML tag name.
+            e.g.,
+                var elements = document.getElementsByTagName("p");
+        
+        4. querySelector(selector): Returns the first element that matches a specified CSS selector.
+            e.g.,
+                var element = document.querySelector(".myClass");
+        
+        5. querySelectorAll(selector): Returns a NodeList containing all elements that match a specified CSS selector.
+            e.g.,
+                var elements = document.querySelectorAll("p.myClass");
+        
+        6. createElement(tagName): Creates a new HTML element with the specified tag name.
+            e.g.,
+                var newElement = document.createElement("div");
+        
+        7. appendChild(node): Appends a child node to an element, making it the last child of the parent element.
+            e.g.,
+                parentElement.appendChild(newElement);
+        
+        8. removeChild(node): Removes a child node from an element.
+            e.g.,
+                parentElement.removeChild(childElement);
+        
+        9. setAttribute(name, value): Sets an attribute on an element.
+            e.g.,
+                element.setAttribute("class", "newClass");
+        
+        10. getAttribute(name): Retrieves the value of a specified attribute on an element.
+            e.g.,
+                var value = element.getAttribute("class");
+        
+        11. innerHTML: Gets or sets the HTML content of an element.
+            e.g.,
+                var content = element.innerHTML;
+                element.innerHTML = "<p>New content</p>";
+        
+        12. textContent: Gets or sets the text content of an element, ignoring HTML tags.
+            e.g.,
+                var text = element.textContent;
+                element.textContent = "New text content";
+        
+        13. addEventListener(event, function): Attaches an event listener to an element, allowing you to respond to specific events, such as clicks or keyboard input.
+            e.g.,
+                element.addEventListener("click", function(event) {
+                  // Your event handler code here
+                });
+
+
+HANDLING EVENTS IN JAVASCRIPT
+    - In the Document Object Model (DOM), events are actions or occurrences that happen in the browser, such as a user clicking a button, a page finishing loading, or a mouse moving over an element. Web developers can use JavaScript to attach event listeners to elements in the DOM, which allow them to respond to and handle these events. 
+        Here are some common events in the DOM and how to work with them:
+
+        1. Click Event: The click event is triggered when an element is clicked, such as a button or a link.
+            e.g., 
+                var button = document.getElementById("myButton");
+                button.addEventListener("click", function() {
+                  // Your code to handle the click event
+                });
+
+        2. Mouseover and Mouseout Events: These events occur when the mouse pointer enters or leaves an element.
+            e.g.,
+                var element = document.getElementById("myElement");
+                element.addEventListener("mouseover", function() {
+                  // Mouse pointer entered the element
+                });
+
+                element.addEventListener("mouseout", function() {
+                  // Mouse pointer left the element
+                });
+
+        3. Load Event: The load event is triggered when a web page or an external resource like an image finishes loading.
+            e.g.,
+                window.addEventListener("load", function() {
+                  // Your code to execute after the page has fully loaded
+                });
+
+        4. Key Events: These events are related to keyboard input, including keydown, keyup, and keypress events.
+            e.g.,
+                document.addEventListener("keydown", function(event) {
+                  // Your code to respond to a key being pressed down
+                });
+
+                document.addEventListener("keyup", function(event) {
+                  // Your code to respond to a key being released
+                });
+
+        5. Submit Event: The submit event is triggered when a form is submitted, either by clicking a submit button or pressing Enter in a text field.
+            e.g.,
+                var form = document.getElementById("myForm");
+                form.addEventListener("submit", function(event) {
+                  // Your code to handle the form submission
+                  event.preventDefault(); // Prevent the default form submission behavior
+                });
+
+        6. Custom Events: You can also create and dispatch custom events to communicate between different parts of your application.
+            e.g.,
+                var customEvent = new Event("myCustomEvent");
+                element.addEventListener("myCustomEvent", function() {
+                  // Your code to handle the custom event
+                });
+                element.dispatchEvent(customEvent); // Dispatch the custom event
+
+CHANGING CSS WITH DOM
+    - The HTML DOM allows JavaScript to change the style of HTML elements. To change the style of an HTML element, use this syntax:
+        "document.getElementById(id).style.property = new style"
+
+        The following example changes the style of a <p> element:
+            <html>
+            <body>
+
+            <p id="p2">Hello World!</p>
+
+            <script>
+            document.getElementById("p2").style.color = "blue";
+            </script>
+
+            </body>
+            </html>
+
+    - Using Events: The HTML DOM allows you to execute code when an event occurs.
+        Events are generated by the browser when "things happen" to HTML elements:
+        =>An element is clicked on
+        =>The page has loaded
+        =>Input fields are changed
+
+        This example changes the style of the HTML element with id="id1", when the user clicks a button:
+            <!DOCTYPE html>
+            <html>
+            <body>
+            
+            <h1 id="id1">My Heading 1</h1>
+            
+            <button type="button"
+            onclick="document.getElementById('id1').style.color = 'red'">
+            Click Me!</button>
+            
+            </body>
+            </html>
+
+LAB WORK 
+    1. Create a webpage containing an image, When the user moves the mouse pointer over the image, the image should change to a new image. When the mouse pointer is moved away from the image, the original image should be displayed. Use JS for the implementation.
+    2. Create a webpage to do form validation using JS. Create a form for entering credit/ debit card details. It should have a name field, card number field, and an expiry date (month & year). Use JS to do the following:
+        - The name field must not be blank.
+        - The card number field must have 16 digits. 
+        - The month on the expiry date field must only take values from 1 to 12.
+        - The year in the expiry date field must only accept two digits.
