@@ -1,0 +1,567 @@
+10th of November, 2023
+
+INSTALLING PHP
+    - Ubuntu
+        sudo apt install php
+    - Fedora
+        sudo dnf install  php
+    - Windows
+        <IDK>
+
+
+NOTE - The PHP files that we want to run must be stored in the "/var/www/html" directory for Apache because it is fixed in this web server. For other web servers, this directory might be different after all.
+
+PHP 
+    - PHP, which stands for Hypertext Preprocessor, is a widely used server-side scripting language designed for web development. It is embedded within HTML code and executed on the server, generating dynamic content that is then sent to the client's web browser. PHP is particularly well-suited for creating dynamic web pages and web applications.
+        Some key features and characteristics of PHP include:
+        1. Server-Side Scripting: PHP is a server-side scripting language, meaning the code is executed on the server before being sent to the user's browser. This is in contrast to client-side scripting languages like JavaScript, which run on the user's browser.
+        2. Open Source: PHP is an open-source language, which means its source code is freely available and can be modified and distributed by developers. This has contributed to its widespread adoption and continuous improvement.
+        3. Cross-Platform Compatibility: PHP is platform-independent, making it compatible with various operating systems, including Windows, Linux, macOS, and others.
+        4. Integration with Databases: PHP can easily connect to databases, such as MySQL, PostgreSQL, and others. This capability makes it a powerful tool for developing database-driven web applications.
+        5. Extensive Documentation: PHP has extensive documentation and a large, active community of developers. This makes it easier for programmers to find help, resources, and third-party libraries to enhance their development process.
+        6. Embeddable in HTML: PHP code is typically embedded directly into HTML, making it easy to mix dynamic and static content within the same file.
+        7. Support for Object-Oriented Programming (OOP): PHP supports both procedural and object-oriented programming paradigms, providing developers with flexibility in their coding approach.
+    
+    - To add PHP code, we use the php tag, e.g.,
+        <?php
+            echo "test from php";
+        ?>
+
+    - To write any type of PHP code, the extension of the file must be ".php". We can still add HTML, CSS and JS in a PHP file, which will be sent to the browser by the php compiler to  display it. 
+        In short, PHP code in a ".html" file will not run and show an error. But HTML, CSS or even JS code will run flawlessly in a ".php" file.
+        It is because PHP is a server level thing, and the server can run the HTML programs and sends the HTML file to the web browser to display it. But the browser is not designed to handle the PHP codes, thus, showing us the error.
+
+    - To see the errors in a PHP file, we can see it by using "php <file name>" to see the error, just like compiling codes from other languages.
+
+    - To use the interactive shell in php, write the command "php -a".
+
+    - PHP keywords, function names, class names, etc. are not case sensitive. 
+    - But the variables' names are case sensitive.
+
+
+BASICS OF PHP
+    - Syntax: PHP code is embedded in HTML and is enclosed within <?php and ?> tags. PHP statements end with a semicolo (";").
+        Example:
+            <?php
+            // PHP code goes here
+            ?>
+
+    - Variables: Variables in PHP start with the $ symbol, followed by the variable name.
+        Example:
+            $variable_name = "Hello, PHP!";
+    
+    - Data Types: PHP supports various data types, including integers, floats, strings, booleans, arrays, and objects.
+        1. Strings: Strings in PHP can be declared using single quotes (') or double quotes (").
+            Example:
+                $name = "John";
+    
+        2. Arrays: PHP arrays can hold multiple values and can be indexed or associative.
+            Example:
+                $colors = array("red", "green", "blue");
+    
+    - Conditional Statements: PHP supports standard conditional statements like if, else if, and else.
+        Example:
+            $number = 10;
+            if ($number > 0) {
+                echo "Positive number";
+            } else {
+                echo "Non-positive number";
+            }
+    
+    - Loops: PHP supports loops such as for, while, and foreach.
+        Example:
+            for ($i = 0; $i < 5; $i++) {
+                echo $i;
+            }
+    
+    - Functions: Functions are defined using the function keyword.
+        Example:
+            function greet($name) {
+                echo "Hello, $name!";
+            }
+            greet("John");
+    
+    - Super Globals: PHP has several built-in global variables called superglobals, such as $_GET, $_POST, $_SESSION, and $_COOKIE, which are used to collect form data, manage sessions, and handle cookies.
+    
+    - Forms: PHP is often used in conjunction with HTML forms to collect user input.
+        Example:
+            <form method="post" action="process.php">
+                Name: <input type="text" name="name">
+                <input type="submit" value="Submit">
+            </form>
+    
+    - Database Interaction: PHP can connect to databases using MySQLi or PDO to perform database operations.
+        Example:
+            $conn = new mysqli($servername, $username, $password, $database);
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            } 
+
+    - Comments: In PHP, we can write various kind of comments like 
+        1. Single Line Comments: Single line comments in PHP are written using "//" as well as "#".
+        2. Multiple Line Comments: Mutliple line comments are written using "/* <Multiple Line Comments> */" in PHP.
+
+    - Variable Naming Convention:
+        1. Must start with the "$" symbol.
+        2. The name must start with a letter or underscore.
+        3. Alphanumeric and Underscores are allowed in Variables names.
+        4. Variables are very case-sensitive in PHP.
+    
+    - Operators:
+        1. Arithmetic: +, -, *, /, %, ** (Exponents)
+        2. Assignment: =, +=, -=, *=, /=, ......
+        3. Increment: ++
+        4. Decrement: --
+        5. Comparison: ==, ===, >, <, >=, <=, !=, !== 
+        6. Logical: &&, ||, !
+
+ACCESSING VARIABLES IN PHP
+    - To access and print the value of a variable in PHP, you can use the echo or print statement to output the variable's value. Here's a simple example:
+            <?php
+            // Declare a variable
+            $myVariable = "Hello, PHP!";
+
+            // Print the value using echo
+            echo $myVariable;
+
+            // Alternatively, you can use print
+            print $myVariable;
+            ?>
+
+        In this example, the variable $myVariable is declared and assigned the value "Hello, PHP!". The echo statement is then used to output the value, and you could use print in a similar way.
+
+        The output of this PHP script would be:
+            Hello, PHP!
+
+        You can use variables to store and manipulate data in PHP, and then you can print or display those values using echo or print. Additionally, you can concatenate variables with strings or use them in various ways to create more complex output. Here's an example of concatenation:
+            <?php
+            $name = "John";
+            $age = 25;
+
+            echo "My name is " . $name . " and I am " . $age . " years old.";
+            ?>
+    
+        This would output:
+            My name is John and I am 25 years old.
+
+USER DEFINED FUNCTIONS IN PHP
+    - In PHP, you can define your own functions to encapsulate reusable blocks of code. Here's the basic syntax for creating a user-defined function:
+            <?php
+
+            // Function definition
+            function functionName($parameter1, $parameter2, ...) {
+                // Code to be executed
+                // You can use parameters within the function
+                // You can also have a return statement to return a value
+            }
+
+            // Function call
+            functionName($argument1, $argument2, ...);
+
+            ?>
+        Let's break this down:
+        - Function Definition:
+            > Start with the function keyword, followed by the name of your function.
+            > Inside parentheses, you can declare parameters that your function will accept (optional).
+            > The function's code block is enclosed within curly braces {}.
+
+        - Function Call:
+            > To execute a function, use its name followed by parentheses.
+            > You can pass arguments to the function, corresponding to the parameters declared in the function definition.
+
+        Here's an example illustrating a simple function that adds two numbers:
+            <?php
+
+            // Function definition
+            function addNumbers($num1, $num2) {
+                $sum = $num1 + $num2;
+                echo "The sum is: $sum";
+            }
+
+            // Function call
+            addNumbers(5, 3);
+
+            ?>
+        In this example, the addNumbers function takes two parameters, adds them, and then prints the result.
+
+        You can also return a value from a function using the return statement. Here's an example:
+            <?php
+
+            // Function definition
+            function addNumbers($num1, $num2) {
+                $sum = $num1 + $num2;
+                return $sum;
+            }
+
+            // Function call
+            $result = addNumbers(5, 3);
+            echo "The sum is: $result";
+
+            ?>
+    
+        In this case, the function returns the sum, and we capture that value in a variable when calling the function.
+
+IF ELSE STATEMENTS IN PHP
+    - Conditional statements in PHP are used to make decisions in your code based on certain conditions. The most common conditional statements are if, else if, and else. Here's a basic overview with examples:
+        1. if Statement: The if statement allows you to execute a block of code only if a specified condition is true.
+            e.g.,
+                <?php
+                $age = 20;
+
+                if ($age >= 18) {
+                    echo "You are an adult.";
+                }
+                ?>
+            In this example, the code inside the if block will only be executed if the variable $age is 18 or greater.
+
+        2. if-else Statement: The if-else statement allows you to execute one block of code if the condition is true and another block if the condition is false.
+            e.g.,
+                <?php
+                $age = 15;
+
+                if ($age >= 18) {
+                    echo "You are an adult.";
+                } else {
+                    echo "You are a minor.";
+                }
+                ?>
+            In this example, if the condition $age >= 18 is false, the code inside the else block will be executed.
+
+        3. if-else if-else Statement: The if-else if-else statement allows you to check multiple conditions and execute different code blocks based on the first condition that is true.
+            e.g., 
+                <?php
+                $grade = 85;
+
+                if ($grade >= 90) {
+                    echo "A";
+                } elseif ($grade >= 80) {
+                    echo "B";
+                } elseif ($grade >= 70) {
+                    echo "C";
+                } else {
+                    echo "F";
+                }
+                ?>
+            In this example, the code checks the value of the variable $grade and prints a corresponding letter grade based on different conditions.
+
+ARRAYS IN PHP
+    - In PHP, an array is a data structure that allows you to store and manage multiple values in a single variable. PHP supports several types of arrays, including indexed arrays, associative arrays, and multidimensional arrays. Here's an overview of each type along with examples:
+        1. Indexed Arrays: Indexed arrays use numerical indices to access elements, and the index starts from 0.
+            Example:
+                <?php
+                // Indexed array
+                $colors = array("red", "green", "blue");
+
+                // Accessing elements
+                echo $colors[0]; // Output: red
+                echo $colors[1]; // Output: green
+                echo $colors[2]; // Output: blue
+                ?>
+
+        2. Associative Arrays: Associative arrays use named keys to associate values with each key.
+            Example:
+
+                <?php
+                // Associative array
+                $person = array("name" => "John", "age" => 30, "city" => "New York");
+
+                // Accessing elements
+                echo $person["name"]; // Output: John
+                echo $person["age"];  // Output: 30
+                echo $person["city"]; // Output: New York
+                ?>
+        
+        3. Multidimensional Arrays: Multidimensional arrays contain other arrays as elements, creating a matrix-like structure.
+            Example:
+
+                <?php
+                // Multidimensional array
+                $students = array(
+                    array("name" => "Alice", "grade" => 95),
+                    array("name" => "Bob", "grade" => 88),
+                    array("name" => "Charlie", "grade" => 92)
+                );
+        
+                // Accessing elements
+                echo $students[0]["name"];   // Output: Alice
+                echo $students[1]["grade"];  // Output: 88
+                echo $students[2]["name"];   // Output: Charlie
+                ?>
+        
+        4. Specialized Arrays: PHP also has specialized arrays like:
+            > Numeric Array:
+                $numericArray = [10, 20, 30];
+            
+            > Associative Array:
+                $assocArray = ["name" => "John", "age" => 25];
+        
+            > Multidimensional Array:
+                $multiArray = [
+                    ["apple", "orange"],
+                    ["carrot", "broccoli"]
+                ];
+        
+    - Common Array Functions: PHP provides several built-in functions to work with arrays, such as:
+        1. count(): Returns the number of elements in an array.
+            e.g.,
+                $count = count($colors); // Output: 3
+        
+        2. array_push(): Adds one or more elements to the end of an array.
+            e.g.,
+                array_push($colors, "yellow");
+        
+        3. array_pop(): Removes the last element from an array.
+            e.g.,
+                $lastColor = array_pop($colors);
+        
+        4. array_merge(): Combines two or more arrays.
+            e.g.,
+                $combinedArray = array_merge($colors, $numericArray);
+
+
+LOOPS IN PHP
+    - In PHP, loops are used to repeatedly execute a block of code as long as a specified condition is true. There are several types of loops in PHP, including for, while, do-while, and foreach. Let's go through each of them with examples:
+        1. for Loop: The for loop is used when you know in advance how many times the code should be executed.
+                <?php
+                for ($i = 1; $i <= 5; $i++) {
+                    echo $i . "<br>";
+                }
+                ?>
+            This will be the output:
+                1
+                2
+                3
+                4
+                5
+        2. while Loop: The while loop is used when you want to execute a block of code while a specified condition is true.
+                <?php
+                $count = 1;
+                while ($count <= 5) {
+                    echo $count . "<br>";
+                    $count++;
+                }
+                ?>
+            This will output the same result as the for loop example.
+
+        3. do-while Loop: The do-while loop is similar to the while loop, but it guarantees that the code block will be executed at least once, even if the condition is initially false. 
+                <?php
+                $count = 1;
+                do {
+                    echo $count . "<br>";
+                    $count++;
+                } while ($count <= 5);
+                ?>
+            This will also show the following output:
+                1
+                2
+                3
+                4
+                5
+
+        4. foreach Loop: The foreach loop is used to iterate over elements in an array or other iterable objects.
+                <?php
+                $colors = array("red", "green", "blue");
+
+                foreach ($colors as $color) {
+                    echo $color . "<br>";
+                }
+                ?>
+            This will be the output:
+                red
+                green
+                blue
+
+    - Loop Control Statements: PHP provides loop control statements to manipulate the flow of loops:
+        1. break: Used to exit a loop prematurely.
+                for ($i = 1; $i <= 10; $i++) {
+                    if ($i == 5) {
+                        break; // Exit the loop when $i is 5
+                    }
+                    echo $i . "<br>";
+                }
+
+        2. continue: Used to skip the rest of the code inside a loop for the current iteration and move to the next one.
+                for ($i = 1; $i <= 10; $i++) {
+                    if ($i == 5) {
+                        continue; // Skip the iteration when $i is 5
+                    }
+                    echo $i . "<br>";
+                }
+
+FOREACH IN PHP
+    - In PHP, the foreach loop is used to iterate over elements in an array or other iterable objects. It simplifies the process of traversing through each element in a collection without explicitly using an index. Here's the basic syntax of the foreach loop:
+
+            <?php
+            foreach ($array as $value) {
+                // Code to be executed for each $value
+            }
+            ?>
+        Here, $array is the array you want to iterate over, and $value represents the current element in each iteration. Let's look at some examples:
+            1. Iterating Over Indexed Array:
+
+                    <?php
+                    $colors = array("red", "green", "blue");
+
+                    foreach ($colors as $color) {
+                        echo $color . "<br>";
+                    }
+                    ?>
+                This will be the output:
+                    red
+                    green
+                    blue
+
+            2. Iterating Over Associative Array:
+
+                    <?php
+                    $person = array("name" => "John", "age" => 30, "city" => "New York");
+
+                    foreach ($person as $key => $value) {
+                        echo "$key: $value <br>";
+                    }
+                    ?>
+                This will be the output:
+
+
+                    name: John
+                    age: 30
+                    city: New York
+
+            3. Iterating Over Multidimensional Array:
+
+                    <?php
+                    $students = array(
+                        array("name" => "Alice", "grade" => 95),
+                        array("name" => "Bob", "grade" => 88),
+                        array("name" => "Charlie", "grade" => 92)
+                    );
+
+                    foreach ($students as $student) {
+                        echo "Name: " . $student["name"] . ", Grade: " . $student["grade"] . "<br>";
+                    }
+                    ?>
+                This will be the output:
+
+
+                    Name: Alice, Grade: 95
+                    Name: Bob, Grade: 88
+                    Name: Charlie, Grade: 92
+
+            4. Foreach with break and continue: You can also use break to exit the loop prematurely and continue to skip the rest of the code inside the loop for the current iteration.
+
+                    <?php
+                    $numbers = array(1, 2, 3, 4, 5);
+
+                    foreach ($numbers as $number) {
+                        if ($number == 3) {
+                            break; // exit the loop when $number is 3
+                        }
+
+                        echo $number . "<br>";
+                    }
+                    ?>
+                This will be the output:
+                    1
+                    2
+
+INCLUDE IN PHP
+    - In PHP, the include statement is used to include and evaluate the specified file within the current script. This is particularly useful for breaking up large and complex projects into smaller, more manageable files. There are several variations of the include statement, such as include_once, require, and require_once.
+        Basic include Statement:
+
+            <?php
+            include 'filename.php';
+            ?>
+        
+        This includes the contents of filename.php in the current script. If the file is not found or cannot be included for any reason, a warning will be issued, but the script execution will continue.
+            1. include_once: This is similar to include, but it checks if the file has already been included, and if so, it won't include it again. This is useful to prevent including the same file multiple times, especially in large projects.
+
+                <?php
+                include_once 'filename.php';
+                ?>
+
+            2. require: The require statement is similar to include, but it generates a fatal error if the file cannot be included, halting the script execution.
+
+                <?php
+                require 'filename.php';
+                ?>
+
+            3. require_once: Similar to require, but it checks if the file has already been included, and if so, it won't include it again.
+
+                <?php
+                require_once 'filename.php';
+                ?>
+    
+        Example: Let's say you have a file named header.php:
+            <!-- header.php -->
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>My Website</title>
+            </head>
+            <body>
+                <header>
+                    <h1>Welcome to My Website</h1>
+                </header>
+        And another file named footer.php:
+            <!-- footer.php -->
+                </body>
+            </html>
+        You can include these files in your main script as follows:
+            <?php
+            // index.php
+            include 'header.php';
+
+            echo "<p>This is the content of the page.</p>";
+
+            include 'footer.php';
+            ?>
+        This way, the structure of your website is divided into separate files for better organization and maintainability.
+
+DATETIME IN PHP 
+    - In PHP, the DateTime class is used for working with dates and times. It provides a set of methods and properties that make it easy to manipulate and format dates and times. Here's a basic overview of using DateTime in PHP:
+        1. Creating a DateTime Object: You can create a DateTime object using the new DateTime() constructor. If you don't provide any arguments, it will represent the current date and time.
+            <?php
+            $now = new DateTime(); // Current date and time
+            echo $now->format('Y-m-d H:i:s'); // Format the date
+            ?>
+        
+        2. Creating a DateTime Object with a Specific Date: You can also create a DateTime object for a specific date by passing a date string as an argument to the constructor.
+            <?php
+            $dateString = '2023-01-15';
+            $specificDate = new DateTime($dateString);
+            echo $specificDate->format('Y-m-d'); // Output: 2023-01-15
+            ?>
+
+        3. Manipulating DateTime: You can manipulate DateTime objects using various methods. For example, you can add or subtract days, months, or years.
+            <?php
+            $now = new DateTime();
+            $futureDate = $now->modify('+1 week');
+            echo $futureDate->format('Y-m-d H:i:s');
+            ?>
+
+        4. Formatting DateTime: The format method allows you to format the date and time according to a specified format.
+            <?php
+            $now = new DateTime();
+            echo $now->format('Y-m-d H:i:s'); // Output: 2023-01-15 12:30:45
+
+    Here are some common format characters:
+
+        Y: Four-digit year
+        m: Two-digit month (01 to 12)
+        d: Two-digit day of the month (01 to 31)
+        H: Two-digit hour in 24-hour format (00 to 23)
+        i: Two-digit minutes (00 to 59)
+        s: Two-digit seconds (00 to 59)
+        
+        5. Timezones: You can set the timezone for a DateTime object using the setTimezone method.
+            <?php
+            $now = new DateTime('2023-01-15 12:30:45', new DateTimeZone('UTC'));
+            $now->setTimezone(new DateTimeZone('America/New_York'));
+            echo $now->format('Y-m-d H:i:s');
+            ?>
+
+
+LAB WORK 
+    1. Using PHP, check if a given integer is positive, negative, or neither (i.e., zero).
+    2. Using PHP, check if a given positive integer is prime or not.
+    3. Using PHP, calculate and print the first 20 numbers of the Fibonacci series.
