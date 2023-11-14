@@ -1,0 +1,217 @@
+14th of November, 2023
+
+HANDLING QUERYSTRING IN PHP
+    - Handling query strings in PHP involves retrieving and manipulating data passed in the URL. Query strings typically come after the question mark (?) in a URL and consist of key-value pairs separated by ampersands (&). For example:
+
+            https://example.com/page.php?name=John&age=25
+
+        In this example, the query string is name=John&age=25, and it contains two key-value pairs (name with the value John and age with the value 25).
+
+        Here's how you can handle query strings in PHP:
+
+        1. Accessing Individual Parameters: You can access individual parameters using the $_GET superglobal array. In the above example:
+
+                $name = $_GET['name']; // Contains 'John'
+                $age = $_GET['age'];   // Contains '25'
+
+            Remember to validate and sanitize user input to prevent security vulnerabilities like SQL injection or cross-site scripting (XSS) attacks.
+
+        2. Checking if a Parameter Exists: Before accessing a parameter, it's a good practice to check if it exists to avoid errors:
+
+                if (isset($_GET['name'])) {
+                    $name = $_GET['name'];
+                } else {
+                    $name = 'Default'; // Set a default value if 'name' is not provided
+                }
+
+        3. Handling Default Values: If a parameter might not be present in the URL, you can use the null coalescing operator (PHP 7.0 and later) to provide a default value:
+
+                $name = $_GET['name'] ?? 'Default';
+
+        4. URL Encoding: When passing values in a URL, it's essential to use urlencode() to encode them, and when retrieving them, use urldecode() to decode:
+
+                $encodedValue = urlencode('Special Characters & Spaces');
+                echo '<a href="page.php?param=' . $encodedValue . '">Link</a>';
+    
+            In the receiving script:
+                $decodedValue = urldecode($_GET['param']);
+
+        5. Parsing the Entire Query String: If you need to work with the entire query string, you can use $_SERVER['QUERY_STRING']:
+
+                $queryString = $_SERVER['QUERY_STRING'];
+
+            You can then parse it into an associative array using functions like parse_str():
+                parse_str($queryString, $params);
+            
+            Now, $params will contain an array of key-value pairs.
+
+NOTE - Cookies are the data from the website which is stored locally in the Client's device. It allows us to resume work faster, authenticate and keep an history. The Cookies are stored in the client's PC because the HTTP is "stateless", i.e., the protocol does not allow the server to keep the data. So, the server has no idea who accessed the website and what goes on. So, the server asks for the stored cookie from the client's PC, which allows the user to access the website and keep track of the user's activities.
+
+NOTE - A session variable in web development refers to a variable that is associated with a user's session. A session is a way to preserve data across subsequent HTTP requests. When a user visits a website, a unique session ID is typically assigned to them, and this ID is used to associate data with that specific user during their visit to the site. Session variables are used to store information that needs to be preserved across multiple pages or interactions within a website. Unlike regular variables in PHP that lose their values once the script finishes execution, session variables persist as long as the user's session is active. Sessions are often used to store user-specific information, such as login status, user preferences, and other data relevant to the user's interaction with the site.
+
+DIFFERENCE BETWEEN SESSION VARIABLE AND COOKIES 
+    - Session variables and cookies are both mechanisms used in web development to store and manage information related to user sessions, but they differ in how and where they store data, as well as their lifespan and security implications.
+
+    1. Session Variable:
+        a. Storage Location:
+            => Session variables are stored on the server.
+            => The data associated with session variables is typically stored in files on the server or in a database.
+    
+        b. Lifespan:
+            => Session variables are temporary and exist only for the duration of a user's session.
+            => They are automatically destroyed when the user closes the browser or remains inactive for a specified period (session timeout).
+
+        c. Access:
+            => Session variables are accessed and manipulated on the server side using the $_SESSION superglobal array in PHP.
+            => They are not directly visible or modifiable by the client (browser).
+
+        d. Security:
+            => Session variables are generally considered more secure than cookies because the data is stored on the server, and only the session ID is sent to the client.
+            => Session data is less susceptible to tampering by users.
+
+    2. Cookie:
+        a. Storage Location:
+            => Cookies are stored on the client side (browser).
+            => The data associated with cookies is sent between the server and the client with each HTTP request.
+
+        b. Lifespan:
+            => Cookies can have a specified expiration time, after which they are automatically deleted.
+            => They can also be set to persist beyond the current session, remaining on the client's machine for a longer period.
+
+        c. Access:
+            => Cookies are accessible on the client side using JavaScript and can be viewed and modified by the user.
+            => They are also sent to the server with each HTTP request, so server-side languages like PHP can access them using the $_COOKIE superglobal.
+
+        d. Security:
+            => Cookies are more susceptible to security risks, such as tampering and theft, because they are stored on the client side.
+            => Security measures like encryption and secure flags can be used to enhance cookie security.
+
+    3. Use Cases:
+        a. Session Variables:
+            => Typically used for storing sensitive information, such as user authentication status.
+            => Well-suited for data that should not be accessible or modifiable by the client.
+
+        b. Cookies:
+            => Useful for storing user preferences, tracking user behavior, and maintaining data between sessions.
+            => Often used for non-sensitive data that can be managed on the client side.
+
+
+
+SUPERGLOBALS IN PHP
+    - Superglobals in PHP are predefined variables that are always accessible, regardless of the scope. They are built into the PHP language and provide information such as form input data, server and execution environment details, session data, etc. The superglobal variables in PHP include:
+
+        1. $GLOBALS: Used to access global variables from anywhere in the script. For example:
+                $x = 10;
+
+                function example() {
+                    echo $GLOBALS['x'];
+                }
+
+                example(); // Outputs: 10
+
+        2. $_SERVER:Contains information about the server environment and execution. For example, $_SERVER['HTTP_USER_AGENT'] contains the user agent string.
+
+        3. $_GET: Used to collect form data after submitting an HTML form with the method "get".For example, $_GET['name'] would contain the value of the 'name' parameter in the URL.
+
+        4. $_POST: Used to collect form data after submitting an HTML form with the method "post". For example, $_POST['username'] would contain the value of the 'username' field in a form submitted with the POST method.
+
+        5. $_REQUEST: Used to collect data from both the $_GET and $_POST superglobals, as well as $_COOKIE. Use with caution due to security implications.
+
+        6. $_FILES: Used to collect information about file uploads via HTTP POST. For example, $_FILES['file']['name'] contains the original name of the uploaded file.
+
+        7. $_ENV: Contains environment variables. For example, $_ENV['HOME'] might contain the path to the user's home directory.
+
+        8. $_COOKIE: Used to read browser cookies sent by the client. For example, $_COOKIE['user'] would contain the value of the 'user' cookie.
+
+        9. $_SESSION: Used to store session variables on the server. For example, $_SESSION['user_id'] might store the user's ID during a session.
+
+        10. $_GET, $_POST, and $_REQUEST: Used to access form data sent via the GET and POST methods.
+            For example:
+
+                $name = $_GET['name'];   // Accessed using the GET method
+                $email = $_POST['email']; // Accessed using the POST method
+
+CREATING COOKIES IN PHP
+    - In PHP, you can create cookies using the setcookie() function. Cookies are typically set before any HTML output, as the headers containing the cookie information must be sent before any content.
+        Here is the basic syntax of the setcookie() function:
+                setcookie(name, value, expire, path, domain, secure, httponly);
+            Here, the variables are
+                name: The name of the cookie.
+                value: The value of the cookie.
+                expire: The expiration time of the cookie. If not set, the cookie will expire when the session ends. It is a Unix timestamp, so you can use time() + seconds to set an expiration time in the future.
+                path: The path on the server in which the cookie will be available.
+                domain: The domain for which the cookie is accessible.
+                secure: If set to true, the cookie will only be sent over secure HTTPS connections.
+                httponly: If set to true, the cookie will only be accessible through the HTTP protocol and not through JavaScript.
+        Here's an example of setting a simple cookie:
+            <?php
+            // Set a cookie named "user" with the value "John Doe" that expires in 1 hour
+            setcookie("user", "John Doe", time() + 3600, "/");
+            ?>
+        In this example:
+            name: "user"
+            value: "John Doe"
+            expire: time() + 3600 sets the expiration time to one hour from the current time.
+            path: "/" makes the cookie available for the entire domain.
+
+        To retrieve and use the cookie, you can access it through the $_COOKIE superglobal:
+            <?php
+            // Check if the "user" cookie is set
+            if (isset($_COOKIE["user"])) {
+                $username = $_COOKIE["user"];
+                echo "Welcome back, $username!";
+            } else {
+                echo "Welcome, new user!";
+            }
+            ?>
+        
+        Remember that cookies are stored on the client side and can be manipulated by users, so avoid storing sensitive information in cookies without proper encryption and validation. Additionally, be cautious with setting long expiration times for cookies, as it may impact the user's privacy.
+
+CREATING SESSION VARIABLES IN PHP
+    - In PHP, you can create and work with session variables to store information that persists across multiple pages during a user's session. Here's a basic guide on how to create session variables:
+
+        1. Start the Session: Before you can use session variables, you need to start the session. You should do this at the beginning of each script where you want to use session-related functionalities.
+                <?php
+                session_start();
+                ?>
+            Place this code at the very beginning of your PHP script, before any HTML output or other PHP code.
+
+        2. Set Session Variables:You can set session variables by assigning values to the $_SESSION superglobal array.
+                <?php
+                session_start();
+
+                // Set session variables
+                $_SESSION['user_id'] = 123;
+                $_SESSION['username'] = 'john_doe';
+                ?>
+            Once set, these variables will be available throughout the user's session.
+
+        3. Access Session Variables: You can access session variables in the same way you access regular variables.
+                <?php
+                session_start();
+
+                // Access session variables
+                $user_id = $_SESSION['user_id'];
+                $username = $_SESSION['username'];
+
+                // Use the variables as needed
+                echo "Welcome back, $username! Your user ID is $user_id.";
+                ?>
+
+        4. Destroy the Session: When a user logs out or when you want to end the session, you can destroy the session and its variables.
+                <?php
+                session_start();
+
+                // Destroy the session
+                session_destroy();
+
+                // Redirect to another page or perform additional actions
+                header("Location: login.php");
+                exit();
+                ?>
+            Note that session_destroy() only destroys the session data on the server side. The client-side session cookie is still present until the browser is closed, unless you also unset the session cookie.
+
+        Make sure that the session_start() function is called at the beginning of every script where you want to use session variables. Additionally, check if the session is already started before calling session_start() to avoid any errors.
+
+        Session variables are a convenient way to store and retrieve user-specific information across multiple pages during a user's visit to your website. Remember to handle user session data securely and avoid storing sensitive information directly in session variables.
+
